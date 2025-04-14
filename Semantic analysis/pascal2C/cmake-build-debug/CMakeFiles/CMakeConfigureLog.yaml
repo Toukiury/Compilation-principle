@@ -1,0 +1,286 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/CLion 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake:204 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Windows - 10.0.22631 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/CLion 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "F:/CLion 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "F:/CLion 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is GNU, found in:
+        F:/CLion 2023.2.2/pascal2C/cmake-build-debug/CMakeFiles/3.26.4/CompilerIdC/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "F:/CLion 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "F:/CLion 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "F:/CLion 2023.2.2/pascal2C/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-z8njch"
+      binary: "F:/CLion 2023.2.2/pascal2C/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-z8njch"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: F:/CLion 2023.2.2/pascal2C/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-z8njch
+        
+        Run Build Command(s):F:/CLion 2023.2.2/bin/ninja/win/x64/ninja.exe -v cmTC_212bc && [1/2] D:\\gytx_x86_64-11.2.0-posix-seh_r1\\mingw64\\bin\\gcc.exe   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_212bc.dir/CMakeCCompilerABI.c.obj -c "F:/CLion 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c"
+        Using built-in specs.
+        COLLECT_GCC=D:\\gytx_x86_64-11.2.0-posix-seh_r1\\mingw64\\bin\\gcc.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../../../src/gcc-11.2.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/build/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/build/prerequisites/x86_64-w64-mingw32-static --with-mpc=/build/prerequisites/x86_64-w64-mingw32-static --with-isl=/build/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-posix-seh-rev1, Built by Guyutongxue' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/opt/lib -L/build/prerequisites/x86_64-zlib-static/lib -L/build/prerequisites/x86_64-w64-mingw32-static/lib ' LD_FOR_TARGET=/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/bin/ld.exe
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 11.2.0 (x86_64-posix-seh-rev1, Built by Guyutongxue) 
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_212bc.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_212bc.dir/'
+         D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/11.2.0/cc1.exe -quiet -v -iprefix D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/ -D_REENTRANT F:/CLion 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_212bc.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=core2 -march=nocona -version -fdiagnostics-color=always -o C:\\WINDOWS\\TEMP\\cctb6aFw.s
+        GNU C17 (x86_64-posix-seh-rev1, Built by Guyutongxue) version 11.2.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 11.2.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/11.2.0/include"
+        ignoring nonexistent directory "C:/msys64/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"
+        ignoring duplicate directory "D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"
+        ignoring duplicate directory "D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "C:/msys64/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/mingw/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include
+         D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed
+         D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include
+        End of search list.
+        GNU C17 (x86_64-posix-seh-rev1, Built by Guyutongxue) version 11.2.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 11.2.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.24-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 75a1210adfd79a978a00ab6447a7ae89
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_212bc.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_212bc.dir/'
+         D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_212bc.dir/CMakeCCompilerABI.c.obj C:\\WINDOWS\\TEMP\\cctb6aFw.s
+        GNU assembler version 2.37 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.37
+        COMPILER_PATH=D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/11.2.0/;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../lib/;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib/;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../
+        COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_212bc.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_212bc.dir/CMakeCCompilerABI.c.'
+        [2/2] cmd.exe /C "cd . && D:\\gytx_x86_64-11.2.0-posix-seh_r1\\mingw64\\bin\\gcc.exe  -v CMakeFiles/cmTC_212bc.dir/CMakeCCompilerABI.c.obj -o cmTC_212bc.exe -Wl,--out-implib,libcmTC_212bc.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+        Using built-in specs.
+        COLLECT_GCC=D:\\gytx_x86_64-11.2.0-posix-seh_r1\\mingw64\\bin\\gcc.exe
+        COLLECT_LTO_WRAPPER=D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/11.2.0/lto-wrapper.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../../../src/gcc-11.2.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/build/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/build/prerequisites/x86_64-w64-mingw32-static --with-mpc=/build/prerequisites/x86_64-w64-mingw32-static --with-isl=/build/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-posix-seh-rev1, Built by Guyutongxue' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/opt/lib -L/build/prerequisites/x86_64-zlib-static/lib -L/build/prerequisites/x86_64-w64-mingw32-static/lib ' LD_FOR_TARGET=/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/bin/ld.exe
+        Thread model: posix
+        Supported LTO compression algorithms: zlib
+        gcc version 11.2.0 (x86_64-posix-seh-rev1, Built by Guyutongxue) 
+        COMPILER_PATH=D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/11.2.0/;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib/../lib/;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../lib/;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib/;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_212bc.exe' '-mtune=core2' '-march=nocona' '-dumpdir' 'cmTC_212bc.'
+         D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/11.2.0/collect2.exe -plugin D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/11.2.0/liblto_plugin.dll -plugin-opt=D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/11.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\WINDOWS\\TEMP\\ccFzo4lR.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=C:/msys64/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64 -m i386pep -Bdynamic -o cmTC_212bc.exe D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/crtbegin.o -LD:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0 -LD:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc -LD:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../lib -LD:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib -LD:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../.. CMakeFiles/cmTC_212bc.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_212bc.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_212bc.exe' '-mtune=core2' '-march=nocona' '-dumpdir' 'cmTC_212bc.'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/CLion 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "F:/CLion 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include]
+          add: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed]
+          add: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include]
+        end of search list found
+        collapse include dir [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include] ==> [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include]
+        collapse include dir [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed] ==> [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed]
+        collapse include dir [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include] ==> [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/x86_64-w64-mingw32/include]
+        implicit include dirs: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/x86_64-w64-mingw32/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "F:/CLion 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "F:/CLion 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld\\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: F:/CLion 2023.2.2/pascal2C/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-z8njch]
+        ignore line: []
+        ignore line: [Run Build Command(s):F:/CLion 2023.2.2/bin/ninja/win/x64/ninja.exe -v cmTC_212bc && [1/2] D:\\gytx_x86_64-11.2.0-posix-seh_r1\\mingw64\\bin\\gcc.exe   -fdiagnostics-color=always   -v -o CMakeFiles/cmTC_212bc.dir/CMakeCCompilerABI.c.obj -c "F:/CLion 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c"]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=D:\\gytx_x86_64-11.2.0-posix-seh_r1\\mingw64\\bin\\gcc.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../../../src/gcc-11.2.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/build/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/build/prerequisites/x86_64-w64-mingw32-static --with-mpc=/build/prerequisites/x86_64-w64-mingw32-static --with-isl=/build/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-posix-seh-rev1, Built by Guyutongxue' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/opt/lib -L/build/prerequisites/x86_64-zlib-static/lib -L/build/prerequisites/x86_64-w64-mingw32-static/lib ' LD_FOR_TARGET=/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/bin/ld.exe]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 11.2.0 (x86_64-posix-seh-rev1  Built by Guyutongxue) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_212bc.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_212bc.dir/']
+        ignore line: [ D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/11.2.0/cc1.exe -quiet -v -iprefix D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/ -D_REENTRANT F:/CLion 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_212bc.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=core2 -march=nocona -version -fdiagnostics-color=always -o C:\\WINDOWS\\TEMP\\cctb6aFw.s]
+        ignore line: [GNU C17 (x86_64-posix-seh-rev1  Built by Guyutongxue) version 11.2.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version 11.2.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/11.2.0/include"]
+        ignore line: [ignoring nonexistent directory "C:/msys64/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../include"]
+        ignore line: [ignoring duplicate directory "D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed"]
+        ignore line: [ignoring duplicate directory "D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include"]
+        ignore line: [ignoring nonexistent directory "C:/msys64/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/mingw/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include]
+        ignore line: [ D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed]
+        ignore line: [ D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C17 (x86_64-posix-seh-rev1  Built by Guyutongxue) version 11.2.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version 11.2.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.24-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 75a1210adfd79a978a00ab6447a7ae89]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_212bc.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_212bc.dir/']
+        ignore line: [ D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_212bc.dir/CMakeCCompilerABI.c.obj C:\\WINDOWS\\TEMP\\cctb6aFw.s]
+        ignore line: [GNU assembler version 2.37 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.37]
+        ignore line: [COMPILER_PATH=D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/11.2.0/]
+        ignore line: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/]
+        ignore line: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/]
+        ignore line: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/]
+        ignore line: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../lib/]
+        ignore line: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-fdiagnostics-color=always' '-v' '-o' 'CMakeFiles/cmTC_212bc.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_212bc.dir/CMakeCCompilerABI.c.']
+        ignore line: [[2/2] cmd.exe /C "cd . && D:\\gytx_x86_64-11.2.0-posix-seh_r1\\mingw64\\bin\\gcc.exe  -v CMakeFiles/cmTC_212bc.dir/CMakeCCompilerABI.c.obj -o cmTC_212bc.exe -Wl --out-implib libcmTC_212bc.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=D:\\gytx_x86_64-11.2.0-posix-seh_r1\\mingw64\\bin\\gcc.exe]
+        ignore line: [COLLECT_LTO_WRAPPER=D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/11.2.0/lto-wrapper.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../../../src/gcc-11.2.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64 --enable-shared --enable-static --disable-multilib --enable-languages=c,c++,lto --enable-libstdcxx-time=yes --enable-threads=posix --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/build/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/build/prerequisites/x86_64-w64-mingw32-static --with-mpc=/build/prerequisites/x86_64-w64-mingw32-static --with-isl=/build/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-posix-seh-rev1, Built by Guyutongxue' --with-bugurl=https://sourceforge.net/projects/mingw-w64 CFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/opt/lib -L/build/prerequisites/x86_64-zlib-static/lib -L/build/prerequisites/x86_64-w64-mingw32-static/lib ' LD_FOR_TARGET=/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64/bin/ld.exe]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 11.2.0 (x86_64-posix-seh-rev1  Built by Guyutongxue) ]
+        ignore line: [COMPILER_PATH=D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/11.2.0/]
+        ignore line: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/]
+        ignore line: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/]
+        ignore line: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/]
+        ignore line: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../lib/]
+        ignore line: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_212bc.exe' '-mtune=core2' '-march=nocona' '-dumpdir' 'cmTC_212bc.']
+        link line: [ D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/11.2.0/collect2.exe -plugin D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/11.2.0/liblto_plugin.dll -plugin-opt=D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/11.2.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\WINDOWS\\TEMP\\ccFzo4lR.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-lpthread -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=C:/msys64/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64 -m i386pep -Bdynamic -o cmTC_212bc.exe D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/crtbegin.o -LD:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0 -LD:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc -LD:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../lib -LD:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib -LD:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../.. CMakeFiles/cmTC_212bc.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_212bc.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -lpthread -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/crtend.o]
+          arg [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/11.2.0/collect2.exe] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/11.2.0/liblto_plugin.dll] ==> ignore
+          arg [-plugin-opt=D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/11.2.0/lto-wrapper.exe] ==> ignore
+          arg [-plugin-opt=-fresolution=C:\\WINDOWS\\TEMP\\ccFzo4lR.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lpthread] ==> ignore
+          arg [-plugin-opt=-pass-through=-ladvapi32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lshell32] ==> ignore
+          arg [-plugin-opt=-pass-through=-luser32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [-plugin-opt=-pass-through=-liconv] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingw32] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_eh] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmoldname] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmingwex] ==> ignore
+          arg [-plugin-opt=-pass-through=-lmsvcrt] ==> ignore
+          arg [-plugin-opt=-pass-through=-lkernel32] ==> ignore
+          arg [--sysroot=C:/msys64/build/x86_64-1120-posix-seh-rt_v9-rev1/mingw64] ==> ignore
+          arg [-m] ==> ignore
+          arg [i386pep] ==> ignore
+          arg [-Bdynamic] ==> search dynamic
+          arg [-o] ==> ignore
+          arg [cmTC_212bc.exe] ==> ignore
+          arg [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> obj [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o]
+          arg [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/crtbegin.o] ==> obj [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/crtbegin.o]
+          arg [-LD:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0] ==> dir [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0]
+          arg [-LD:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc] ==> dir [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc]
+          arg [-LD:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> dir [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib/../lib]
+          arg [-LD:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../lib] ==> dir [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../lib]
+          arg [-LD:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib] ==> dir [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib]
+          arg [-LD:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../..] ==> dir [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../..]
+          arg [CMakeFiles/cmTC_212bc.dir/CMakeCCompilerABI.c.obj] ==> ignore
+          arg [--out-implib] ==> ignore
+          arg [libcmTC_212bc.dll.a] ==> ignore
+          arg [--major-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [--minor-image-version] ==> ignore
+          arg [0] ==> ignore
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lgcc_eh] ==> lib [gcc_eh]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-lpthread] ==> lib [pthread]
+          arg [-ladvapi32] ==> lib [advapi32]
+          arg [-lshell32] ==> lib [shell32]
+          arg [-luser32] ==> lib [user32]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [-liconv] ==> lib [iconv]
+          arg [-lmingw32] ==> lib [mingw32]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lgcc_eh] ==> lib [gcc_eh]
+          arg [-lmoldname] ==> lib [moldname]
+          arg [-lmingwex] ==> lib [mingwex]
+          arg [-lmsvcrt] ==> lib [msvcrt]
+          arg [-lkernel32] ==> lib [kernel32]
+          arg [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/crtend.o] ==> obj [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/crtend.o]
+        remove lib [gcc_eh]
+        remove lib [msvcrt]
+        remove lib [gcc_eh]
+        remove lib [msvcrt]
+        collapse obj [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o] ==> [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/x86_64-w64-mingw32/lib/crt2.o]
+        collapse obj [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/crtbegin.o] ==> [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/crtbegin.o]
+        collapse obj [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/crtend.o] ==> [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/crtend.o]
+        collapse library dir [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0] ==> [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0]
+        collapse library dir [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc] ==> [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib/gcc]
+        collapse library dir [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib/../lib] ==> [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/x86_64-w64-mingw32/lib]
+        collapse library dir [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../lib] ==> [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib]
+        collapse library dir [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../../../x86_64-w64-mingw32/lib] ==> [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/x86_64-w64-mingw32/lib]
+        collapse library dir [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/11.2.0/../../..] ==> [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib]
+        implicit libs: [mingw32;gcc;moldname;mingwex;kernel32;pthread;advapi32;shell32;user32;kernel32;iconv;mingw32;gcc;moldname;mingwex;kernel32]
+        implicit objs: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/x86_64-w64-mingw32/lib/crt2.o;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/crtbegin.o;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0/crtend.o]
+        implicit dirs: [D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib/gcc/x86_64-w64-mingw32/11.2.0;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib/gcc;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/x86_64-w64-mingw32/lib;D:/gytx_x86_64-11.2.0-posix-seh_r1/mingw64/lib]
+        implicit fwks: []
+      
+      
+...

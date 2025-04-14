@@ -1,0 +1,4 @@
+Phase 1: Symbol Table and Type Checking
+Program: main (Scope: 0)
+Declared 'a' as integer (Scope: 0)
+Declared 'b' as integer (Scope: 0)

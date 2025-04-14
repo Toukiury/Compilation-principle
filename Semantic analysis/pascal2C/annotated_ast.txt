@@ -1,0 +1,44 @@
+Phase 2: Annotated AST
+{
+    "type": "Program",
+    "name": "main",
+    "declarations": [
+        {
+            "type": "VarDeclaration",
+            "names": ["a", "b"],
+            "var_type": "integer",
+            "scope": "0"
+        }    ],
+    "body":     {
+        "type": "Block",
+        "statements": [
+            {
+                "type": "Assignment",
+                "left":                 {"type": "Identifier", "name": "a", "var_type": "integer"},
+                "right":                 {"type": "IntegerLiteral", "value": 3}
+            },
+            {
+                "type": "Assignment",
+                "left":                 {"type": "Identifier", "name": "b", "var_type": "integer"},
+                "right":                 {"type": "IntegerLiteral", "value": 5}
+            },
+            {
+                "type": "Assignment",
+                "left":                 {"type": "Identifier", "name": "a", "var_type": "integer"},
+                "right":                 {"type": "IntegerLiteral", "value": 5}
+            },
+            {
+                "type": "FunctionCall",
+                "name": "write",
+                "args": [
+                    {
+                        "type": "BinaryExpression",
+                        "operator": "+",
+                        "left":                         {"type": "Identifier", "name": "a", "var_type": "integer"},
+                        "right":                         {"type": "Identifier", "name": "b", "var_type": "integer"}
+                    }
+                ],
+                "return_type": "void"
+            }
+        ]
+    }}

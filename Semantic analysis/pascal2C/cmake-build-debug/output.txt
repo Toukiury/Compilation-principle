@@ -1,0 +1,96 @@
+Token List:
+TOK_PROGRAM: program
+TOK_ID: main
+TOK_SEMICOLON: ;
+TOK_VAR: var
+TOK_ID: a
+TOK_COMMA: ,
+TOK_ID: b
+TOK_COLON: :
+TOK_INTEGER: integer
+TOK_SEMICOLON: ;
+TOK_BEGIN: begin
+TOK_ID: a
+TOK_ASSIGN: :=
+TOK_INTEGER_CONST: 3
+TOK_SEMICOLON: ;
+TOK_ID: b
+TOK_ASSIGN: :=
+TOK_INTEGER_CONST: 5
+TOK_SEMICOLON: ;
+TOK_ID: a
+TOK_ASSIGN: :=
+TOK_INTEGER_CONST: 5
+TOK_SEMICOLON: ;
+TOK_WRITE: write
+TOK_LPAREN: (
+TOK_ID: a
+TOK_PLUS: +
+TOK_ID: b
+TOK_RPAREN: )
+TOK_SEMICOLON: ;
+TOK_END: end
+TOK_DOT: .
+
+Parsing successful!
+Syntax Tree:
+program
+  program_head
+    program (program)
+    id (main)
+  program_body
+    const_declarations (empty)
+    var_declarations
+      var_declaration
+        idlist
+          id (a)
+          id (b)
+        basic_type (integer)
+    subprogram_declarations (empty)
+    compound_statement
+      statement_list
+        statement (assign)
+          variable
+            id (a)
+            id_varpart (empty)
+          expression
+            simple_expression (3)
+              term (3)
+                factor (3)
+        statement (assign)
+          variable
+            id (b)
+            id_varpart (empty)
+          expression
+            simple_expression (5)
+              term (5)
+                factor (5)
+        statement (assign)
+          variable
+            id (a)
+            id_varpart (empty)
+          expression
+            simple_expression (5)
+              term (5)
+                factor (5)
+        statement (write)
+          expression_list
+            expression
+              simple_expression (plus)
+                simple_expression (5)
+                  term (5)
+                    factor (variable)
+                      variable
+                        id (a)
+                        id_varpart (empty)
+                term (5)
+                  factor (variable)
+                    variable
+                      id (b)
+                      id_varpart (empty)
+
+Symbol Table:
+Scope (Level 0):
+  Name: main, Kind: program
+  Name: a, Kind: var, Type: integer, Value: 5
+  Name: b, Kind: var, Type: integer, Value: 5
