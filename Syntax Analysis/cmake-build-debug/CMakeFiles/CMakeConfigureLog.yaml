@@ -1,0 +1,409 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineSystem.cmake:204 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The system is: Windows - 10.0.26100 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/gcc.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.exe"
+      
+      The C compiler identification is GNU, found in:
+        D:/code/clion/pascal_c/cmake-build-debug/CMakeFiles/3.26.4/CompilerIdC/a.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/c++.exe 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.exe"
+      
+      The CXX compiler identification is GNU, found in:
+        D:/code/clion/pascal_c/cmake-build-debug/CMakeFiles/3.26.4/CompilerIdCXX/a.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "D:/code/clion/pascal_c/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wzjsdx"
+      binary: "D:/code/clion/pascal_c/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wzjsdx"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_C_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: D:/code/clion/pascal_c/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wzjsdx
+        
+        Run Build Command(s):D:/code/CLion 2023.2.1/bin/ninja/win/x64/ninja.exe -v cmTC_c986e && [1/2] D:\\code\\GYTX_X~1.0-W\\mingw64\\bin\\gcc.exe   -v -o CMakeFiles/cmTC_c986e.dir/CMakeCCompilerABI.c.obj -c "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c"
+        Using built-in specs.
+        COLLECT_GCC=D:\\code\\GYTX_X~1.0-W\\mingw64\\bin\\gcc.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../../../src/gcc-13.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64 --enable-host-shared --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=win32 --enable-libstdcxx-threads=yes --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/build/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/build/prerequisites/x86_64-w64-mingw32-static --with-mpc=/build/prerequisites/x86_64-w64-mingw32-static --with-isl=/build/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-win32-seh, Built by Guyutongxue' --with-bugurl=https://github.com/niXman/mingw-builds CFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/lib -L/build/prerequisites/x86_64-zlib-static/lib -L/build/prerequisites/x86_64-w64-mingw32-static/lib ' LD_FOR_TARGET=/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/bin/ld.exe --with-boot-ldflags=' -Wl,--disable-dynamicbase -static-libstdc++ -static-libgcc'
+        Thread model: win32
+        Supported LTO compression algorithms: zlib
+        gcc version 13.1.0 (x86_64-win32-seh, Built by Guyutongxue) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c986e.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_c986e.dir/'
+         D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/cc1.exe -quiet -v -iprefix D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -U_REENTRANT D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_c986e.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=core2 -march=nocona -version -o C:\\Users\\28575\\AppData\\Local\\Temp\\cc0cyN7Q.s
+        GNU C17 (x86_64-win32-seh, Built by Guyutongxue) version 13.1.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 13.1.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.25-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include"
+        ignoring nonexistent directory "C:/msys64/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"
+        ignoring duplicate directory "D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"
+        ignoring duplicate directory "D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "C:/msys64/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/mingw/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include
+         D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed
+         D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include
+        End of search list.
+        Compiler executable checksum: d0ef3db30928dd0df23bab0a80f05546
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c986e.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_c986e.dir/'
+         D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_c986e.dir/CMakeCCompilerABI.c.obj C:\\Users\\28575\\AppData\\Local\\Temp\\cc0cyN7Q.s
+        GNU assembler version 2.39 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.39
+        COMPILER_PATH=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c986e.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_c986e.dir/CMakeCCompilerABI.c.'
+        [2/2] cmd.exe /C "cd . && D:\\code\\GYTX_X~1.0-W\\mingw64\\bin\\gcc.exe  -v CMakeFiles/cmTC_c986e.dir/CMakeCCompilerABI.c.obj -o cmTC_c986e.exe -Wl,--out-implib,libcmTC_c986e.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+        Using built-in specs.
+        COLLECT_GCC=D:\\code\\GYTX_X~1.0-W\\mingw64\\bin\\gcc.exe
+        COLLECT_LTO_WRAPPER=D:/code/gytx_x86_64-13.1.0-win32-seh\\ (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../../../src/gcc-13.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64 --enable-host-shared --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=win32 --enable-libstdcxx-threads=yes --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/build/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/build/prerequisites/x86_64-w64-mingw32-static --with-mpc=/build/prerequisites/x86_64-w64-mingw32-static --with-isl=/build/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-win32-seh, Built by Guyutongxue' --with-bugurl=https://github.com/niXman/mingw-builds CFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/lib -L/build/prerequisites/x86_64-zlib-static/lib -L/build/prerequisites/x86_64-w64-mingw32-static/lib ' LD_FOR_TARGET=/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/bin/ld.exe --with-boot-ldflags=' -Wl,--disable-dynamicbase -static-libstdc++ -static-libgcc'
+        Thread model: win32
+        Supported LTO compression algorithms: zlib
+        gcc version 13.1.0 (x86_64-win32-seh, Built by Guyutongxue) 
+        COMPILER_PATH=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c986e.exe' '-mtune=core2' '-march=nocona' '-dumpdir' 'cmTC_c986e.'
+         D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -plugin D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll -plugin-opt=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\28575\\AppData\\Local\\Temp\\ccgNho1X.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=C:/msys64/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64 -m i386pep -Bdynamic -o cmTC_c986e.exe D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. CMakeFiles/cmTC_c986e.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_c986e.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c986e.exe' '-mtune=core2' '-march=nocona' '-dumpdir' 'cmTC_c986e.'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include]
+          add: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed]
+          add: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include]
+        end of search list found
+        collapse include dir [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include] ==> [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include]
+        collapse include dir [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed] ==> [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed]
+        collapse include dir [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include] ==> [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/x86_64-w64-mingw32/include]
+        implicit include dirs: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/x86_64-w64-mingw32/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld\\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: D:/code/clion/pascal_c/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-wzjsdx]
+        ignore line: []
+        ignore line: [Run Build Command(s):D:/code/CLion 2023.2.1/bin/ninja/win/x64/ninja.exe -v cmTC_c986e && [1/2] D:\\code\\GYTX_X~1.0-W\\mingw64\\bin\\gcc.exe   -v -o CMakeFiles/cmTC_c986e.dir/CMakeCCompilerABI.c.obj -c "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c"]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=D:\\code\\GYTX_X~1.0-W\\mingw64\\bin\\gcc.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../../../src/gcc-13.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64 --enable-host-shared --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=win32 --enable-libstdcxx-threads=yes --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/build/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/build/prerequisites/x86_64-w64-mingw32-static --with-mpc=/build/prerequisites/x86_64-w64-mingw32-static --with-isl=/build/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-win32-seh, Built by Guyutongxue' --with-bugurl=https://github.com/niXman/mingw-builds CFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/lib -L/build/prerequisites/x86_64-zlib-static/lib -L/build/prerequisites/x86_64-w64-mingw32-static/lib ' LD_FOR_TARGET=/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/bin/ld.exe --with-boot-ldflags=' -Wl,--disable-dynamicbase -static-libstdc++ -static-libgcc']
+        ignore line: [Thread model: win32]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 13.1.0 (x86_64-win32-seh  Built by Guyutongxue) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c986e.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_c986e.dir/']
+        ignore line: [ D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/cc1.exe -quiet -v -iprefix D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -U_REENTRANT D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_c986e.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=core2 -march=nocona -version -o C:\\Users\\28575\\AppData\\Local\\Temp\\cc0cyN7Q.s]
+        ignore line: [GNU C17 (x86_64-win32-seh  Built by Guyutongxue) version 13.1.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version 13.1.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.25-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include"]
+        ignore line: [ignoring nonexistent directory "C:/msys64/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"]
+        ignore line: [ignoring duplicate directory "D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"]
+        ignore line: [ignoring duplicate directory "D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"]
+        ignore line: [ignoring nonexistent directory "C:/msys64/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/mingw/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include]
+        ignore line: [ D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed]
+        ignore line: [ D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: d0ef3db30928dd0df23bab0a80f05546]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c986e.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_c986e.dir/']
+        ignore line: [ D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_c986e.dir/CMakeCCompilerABI.c.obj C:\\Users\\28575\\AppData\\Local\\Temp\\cc0cyN7Q.s]
+        ignore line: [GNU assembler version 2.39 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.39]
+        ignore line: [COMPILER_PATH=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_c986e.dir/CMakeCCompilerABI.c.obj' '-c' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_c986e.dir/CMakeCCompilerABI.c.']
+        ignore line: [[2/2] cmd.exe /C "cd . && D:\\code\\GYTX_X~1.0-W\\mingw64\\bin\\gcc.exe  -v CMakeFiles/cmTC_c986e.dir/CMakeCCompilerABI.c.obj -o cmTC_c986e.exe -Wl --out-implib libcmTC_c986e.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=D:\\code\\GYTX_X~1.0-W\\mingw64\\bin\\gcc.exe]
+        ignore line: [COLLECT_LTO_WRAPPER=D:/code/gytx_x86_64-13.1.0-win32-seh\\ (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../../../src/gcc-13.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64 --enable-host-shared --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=win32 --enable-libstdcxx-threads=yes --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/build/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/build/prerequisites/x86_64-w64-mingw32-static --with-mpc=/build/prerequisites/x86_64-w64-mingw32-static --with-isl=/build/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-win32-seh, Built by Guyutongxue' --with-bugurl=https://github.com/niXman/mingw-builds CFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/lib -L/build/prerequisites/x86_64-zlib-static/lib -L/build/prerequisites/x86_64-w64-mingw32-static/lib ' LD_FOR_TARGET=/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/bin/ld.exe --with-boot-ldflags=' -Wl,--disable-dynamicbase -static-libstdc++ -static-libgcc']
+        ignore line: [Thread model: win32]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 13.1.0 (x86_64-win32-seh  Built by Guyutongxue) ]
+        ignore line: [COMPILER_PATH=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c986e.exe' '-mtune=core2' '-march=nocona' '-dumpdir' 'cmTC_c986e.']
+        ignore line: [ D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -plugin D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll -plugin-opt=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\28575\\AppData\\Local\\Temp\\ccgNho1X.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_eh -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=C:/msys64/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64 -m i386pep -Bdynamic -o cmTC_c986e.exe D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. CMakeFiles/cmTC_c986e.dir/CMakeCCompilerABI.c.obj --out-implib libcmTC_c986e.dll.a --major-image-version 0 --minor-image-version 0 -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc -lgcc_eh -lmoldname -lmingwex -lmsvcrt -lkernel32 D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_c986e.exe' '-mtune=core2' '-march=nocona' '-dumpdir' 'cmTC_c986e.']
+        ignore line: []
+        ignore line: []
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "D:/code/clion/pascal_c/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-plhwcw"
+      binary: "D:/code/clion/pascal_c/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-plhwcw"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: D:/code/clion/pascal_c/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-plhwcw
+        
+        Run Build Command(s):D:/code/CLion 2023.2.1/bin/ninja/win/x64/ninja.exe -v cmTC_b1b69 && [1/2] D:\\code\\GYTX_X~1.0-W\\mingw64\\bin\\C__~1.EXE   -v -o CMakeFiles/cmTC_b1b69.dir/CMakeCXXCompilerABI.cpp.obj -c "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp"
+        Using built-in specs.
+        COLLECT_GCC=D:\\code\\GYTX_X~1.0-W\\mingw64\\bin\\C__~1.EXE
+        Target: x86_64-w64-mingw32
+        Configured with: ../../../src/gcc-13.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64 --enable-host-shared --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=win32 --enable-libstdcxx-threads=yes --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/build/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/build/prerequisites/x86_64-w64-mingw32-static --with-mpc=/build/prerequisites/x86_64-w64-mingw32-static --with-isl=/build/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-win32-seh, Built by Guyutongxue' --with-bugurl=https://github.com/niXman/mingw-builds CFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/lib -L/build/prerequisites/x86_64-zlib-static/lib -L/build/prerequisites/x86_64-w64-mingw32-static/lib ' LD_FOR_TARGET=/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/bin/ld.exe --with-boot-ldflags=' -Wl,--disable-dynamicbase -static-libstdc++ -static-libgcc'
+        Thread model: win32
+        Supported LTO compression algorithms: zlib
+        gcc version 13.1.0 (x86_64-win32-seh, Built by Guyutongxue) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b1b69.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_b1b69.dir/'
+         D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/cc1plus.exe -quiet -v -iprefix D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -U_REENTRANT D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_b1b69.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=core2 -march=nocona -version -o C:\\Users\\28575\\AppData\\Local\\Temp\\ccMZWEeg.s
+        GNU C++17 (x86_64-win32-seh, Built by Guyutongxue) version 13.1.0 (x86_64-w64-mingw32)
+        	compiled by GNU C version 13.1.0, GMP version 6.2.1, MPFR version 4.1.0, MPC version 1.2.1, isl version isl-0.25-GMP
+        
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring duplicate directory "D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"
+        ignoring duplicate directory "D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"
+        ignoring duplicate directory "D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"
+        ignoring duplicate directory "D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include"
+        ignoring nonexistent directory "C:/msys64/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"
+        ignoring duplicate directory "D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"
+        ignoring duplicate directory "D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"
+        ignoring nonexistent directory "C:/msys64/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/mingw/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++
+         D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32
+         D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward
+         D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include
+         D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed
+         D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include
+        End of search list.
+        Compiler executable checksum: 5f4a861777beaffe49b0b444819855c4
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b1b69.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_b1b69.dir/'
+         D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_b1b69.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\28575\\AppData\\Local\\Temp\\ccMZWEeg.s
+        GNU assembler version 2.39 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.39
+        COMPILER_PATH=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b1b69.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_b1b69.dir/CMakeCXXCompilerABI.cpp.'
+        [2/2] cmd.exe /C "cd . && D:\\code\\GYTX_X~1.0-W\\mingw64\\bin\\C__~1.EXE  -v CMakeFiles/cmTC_b1b69.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_b1b69.exe -Wl,--out-implib,libcmTC_b1b69.dll.a -Wl,--major-image-version,0,--minor-image-version,0   && cd ."
+        Using built-in specs.
+        COLLECT_GCC=D:\\code\\GYTX_X~1.0-W\\mingw64\\bin\\C__~1.EXE
+        COLLECT_LTO_WRAPPER=D:/code/gytx_x86_64-13.1.0-win32-seh\\ (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe
+        Target: x86_64-w64-mingw32
+        Configured with: ../../../src/gcc-13.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64 --enable-host-shared --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=win32 --enable-libstdcxx-threads=yes --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/build/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/build/prerequisites/x86_64-w64-mingw32-static --with-mpc=/build/prerequisites/x86_64-w64-mingw32-static --with-isl=/build/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-win32-seh, Built by Guyutongxue' --with-bugurl=https://github.com/niXman/mingw-builds CFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/lib -L/build/prerequisites/x86_64-zlib-static/lib -L/build/prerequisites/x86_64-w64-mingw32-static/lib ' LD_FOR_TARGET=/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/bin/ld.exe --with-boot-ldflags=' -Wl,--disable-dynamicbase -static-libstdc++ -static-libgcc'
+        Thread model: win32
+        Supported LTO compression algorithms: zlib
+        gcc version 13.1.0 (x86_64-win32-seh, Built by Guyutongxue) 
+        COMPILER_PATH=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/
+        LIBRARY_PATH=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b1b69.exe' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'cmTC_b1b69.'
+         D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -plugin D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll -plugin-opt=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\28575\\AppData\\Local\\Temp\\cc5w1byg.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=C:/msys64/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64 -m i386pep -Bdynamic -o cmTC_b1b69.exe D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. CMakeFiles/cmTC_b1b69.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_b1b69.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o
+        COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b1b69.exe' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'cmTC_b1b69.'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++]
+          add: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32]
+          add: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward]
+          add: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include]
+          add: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed]
+          add: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include]
+        end of search list found
+        collapse include dir [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++] ==> [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++]
+        collapse include dir [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32] ==> [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32]
+        collapse include dir [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward] ==> [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward]
+        collapse include dir [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include] ==> [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include]
+        collapse include dir [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed] ==> [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed]
+        collapse include dir [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include] ==> [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/x86_64-w64-mingw32/include]
+        implicit include dirs: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed;D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/x86_64-w64-mingw32/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld\\.exe|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: D:/code/clion/pascal_c/cmake-build-debug/CMakeFiles/CMakeScratch/TryCompile-plhwcw]
+        ignore line: []
+        ignore line: [Run Build Command(s):D:/code/CLion 2023.2.1/bin/ninja/win/x64/ninja.exe -v cmTC_b1b69 && [1/2] D:\\code\\GYTX_X~1.0-W\\mingw64\\bin\\C__~1.EXE   -v -o CMakeFiles/cmTC_b1b69.dir/CMakeCXXCompilerABI.cpp.obj -c "D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp"]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=D:\\code\\GYTX_X~1.0-W\\mingw64\\bin\\C__~1.EXE]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../../../src/gcc-13.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64 --enable-host-shared --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=win32 --enable-libstdcxx-threads=yes --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/build/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/build/prerequisites/x86_64-w64-mingw32-static --with-mpc=/build/prerequisites/x86_64-w64-mingw32-static --with-isl=/build/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-win32-seh, Built by Guyutongxue' --with-bugurl=https://github.com/niXman/mingw-builds CFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/lib -L/build/prerequisites/x86_64-zlib-static/lib -L/build/prerequisites/x86_64-w64-mingw32-static/lib ' LD_FOR_TARGET=/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/bin/ld.exe --with-boot-ldflags=' -Wl,--disable-dynamicbase -static-libstdc++ -static-libgcc']
+        ignore line: [Thread model: win32]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 13.1.0 (x86_64-win32-seh  Built by Guyutongxue) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b1b69.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_b1b69.dir/']
+        ignore line: [ D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/cc1plus.exe -quiet -v -iprefix D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/ -U_REENTRANT D:/code/CLion 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_b1b69.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=core2 -march=nocona -version -o C:\\Users\\28575\\AppData\\Local\\Temp\\ccMZWEeg.s]
+        ignore line: [GNU C++17 (x86_64-win32-seh  Built by Guyutongxue) version 13.1.0 (x86_64-w64-mingw32)]
+        ignore line: [	compiled by GNU C version 13.1.0  GMP version 6.2.1  MPFR version 4.1.0  MPC version 1.2.1  isl version isl-0.25-GMP]
+        ignore line: []
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring duplicate directory "D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++"]
+        ignore line: [ignoring duplicate directory "D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32"]
+        ignore line: [ignoring duplicate directory "D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward"]
+        ignore line: [ignoring duplicate directory "D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include"]
+        ignore line: [ignoring nonexistent directory "C:/msys64/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../include"]
+        ignore line: [ignoring duplicate directory "D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed"]
+        ignore line: [ignoring duplicate directory "D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/lib/gcc/../../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include"]
+        ignore line: [ignoring nonexistent directory "C:/msys64/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/mingw/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++]
+        ignore line: [ D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/x86_64-w64-mingw32]
+        ignore line: [ D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/backward]
+        ignore line: [ D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include]
+        ignore line: [ D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/include-fixed]
+        ignore line: [ D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/include]
+        ignore line: [End of search list.]
+        ignore line: [Compiler executable checksum: 5f4a861777beaffe49b0b444819855c4]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b1b69.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_b1b69.dir/']
+        ignore line: [ D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/as.exe -v -o CMakeFiles/cmTC_b1b69.dir/CMakeCXXCompilerABI.cpp.obj C:\\Users\\28575\\AppData\\Local\\Temp\\ccMZWEeg.s]
+        ignore line: [GNU assembler version 2.39 (x86_64-w64-mingw32) using BFD version (GNU Binutils) 2.39]
+        ignore line: [COMPILER_PATH=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_b1b69.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'CMakeFiles/cmTC_b1b69.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [[2/2] cmd.exe /C "cd . && D:\\code\\GYTX_X~1.0-W\\mingw64\\bin\\C__~1.EXE  -v CMakeFiles/cmTC_b1b69.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_b1b69.exe -Wl --out-implib libcmTC_b1b69.dll.a -Wl --major-image-version 0 --minor-image-version 0   && cd ."]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=D:\\code\\GYTX_X~1.0-W\\mingw64\\bin\\C__~1.EXE]
+        ignore line: [COLLECT_LTO_WRAPPER=D:/code/gytx_x86_64-13.1.0-win32-seh\\ (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe]
+        ignore line: [Target: x86_64-w64-mingw32]
+        ignore line: [Configured with: ../../../src/gcc-13.1.0/configure --host=x86_64-w64-mingw32 --build=x86_64-w64-mingw32 --target=x86_64-w64-mingw32 --prefix=/mingw64 --with-sysroot=/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64 --enable-host-shared --disable-multilib --enable-languages=c,c++,fortran,lto --enable-libstdcxx-time=yes --enable-threads=win32 --enable-libstdcxx-threads=yes --enable-libgomp --enable-libatomic --enable-lto --enable-graphite --enable-checking=release --enable-fully-dynamic-string --enable-version-specific-runtime-libs --enable-libstdcxx-filesystem-ts=yes --disable-libstdcxx-pch --disable-libstdcxx-debug --enable-bootstrap --disable-rpath --disable-win32-registry --disable-nls --disable-werror --disable-symvers --with-gnu-as --with-gnu-ld --with-arch=nocona --with-tune=core2 --with-libiconv --with-system-zlib --with-gmp=/build/prerequisites/x86_64-w64-mingw32-static --with-mpfr=/build/prerequisites/x86_64-w64-mingw32-static --with-mpc=/build/prerequisites/x86_64-w64-mingw32-static --with-isl=/build/prerequisites/x86_64-w64-mingw32-static --with-pkgversion='x86_64-win32-seh, Built by Guyutongxue' --with-bugurl=https://github.com/niXman/mingw-builds CFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CXXFLAGS='-O2 -pipe -fno-ident -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' CPPFLAGS=' -I/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/include -I/build/prerequisites/x86_64-zlib-static/include -I/build/prerequisites/x86_64-w64-mingw32-static/include' LDFLAGS='-pipe -fno-ident -L/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/opt/lib -L/build/prerequisites/x86_64-zlib-static/lib -L/build/prerequisites/x86_64-w64-mingw32-static/lib ' LD_FOR_TARGET=/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64/bin/ld.exe --with-boot-ldflags=' -Wl,--disable-dynamicbase -static-libstdc++ -static-libgcc']
+        ignore line: [Thread model: win32]
+        ignore line: [Supported LTO compression algorithms: zlib]
+        ignore line: [gcc version 13.1.0 (x86_64-win32-seh  Built by Guyutongxue) ]
+        ignore line: [COMPILER_PATH=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/bin/]
+        ignore line: [LIBRARY_PATH=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/]
+        ignore line: [D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b1b69.exe' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'cmTC_b1b69.']
+        ignore line: [ D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/collect2.exe -plugin D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/liblto_plugin.dll -plugin-opt=D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../libexec/gcc/x86_64-w64-mingw32/13.1.0/lto-wrapper.exe -plugin-opt=-fresolution=C:\\Users\\28575\\AppData\\Local\\Temp\\cc5w1byg.res -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-ladvapi32 -plugin-opt=-pass-through=-lshell32 -plugin-opt=-pass-through=-luser32 -plugin-opt=-pass-through=-lkernel32 -plugin-opt=-pass-through=-liconv -plugin-opt=-pass-through=-lmingw32 -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lmoldname -plugin-opt=-pass-through=-lmingwex -plugin-opt=-pass-through=-lmsvcrt -plugin-opt=-pass-through=-lkernel32 --sysroot=C:/msys64/build/x86_64-1310-win32-seh-ucrt-rt_v10/mingw64 -m i386pep -Bdynamic -o cmTC_b1b69.exe D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib/crt2.o D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtbegin.o -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0 -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib/../lib -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../lib -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../../../x86_64-w64-mingw32/lib -LD:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/../../.. CMakeFiles/cmTC_b1b69.dir/CMakeCXXCompilerABI.cpp.obj --out-implib libcmTC_b1b69.dll.a --major-image-version 0 --minor-image-version 0 -lstdc++ -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 -ladvapi32 -lshell32 -luser32 -lkernel32 -liconv -lmingw32 -lgcc_s -lgcc -lmoldname -lmingwex -lmsvcrt -lkernel32 D:/code/gytx_x86_64-13.1.0-win32-seh (1)/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/13.1.0/crtend.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_b1b69.exe' '-shared-libgcc' '-mtune=core2' '-march=nocona' '-dumpdir' 'cmTC_b1b69.']
+        ignore line: []
+        ignore line: []
+        implicit libs: []
+        implicit objs: []
+        implicit dirs: []
+        implicit fwks: []
+      
+      
+...
