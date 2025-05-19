@@ -7,246 +7,265 @@
 
 namespace opt {
 
-const int MAX_DEPTH = 100;
-ir::Module *prog = nullptr;
+constexpr int kMaxRecursionDepth = 100;
+ir::Module* current_module = nullptr;
 
-// 执行一元运算
-std::shared_ptr<ir::Literal> compute(std::shared_ptr<ir::Literal> l1, ir::Instruction::OpID op, bool is_real) {
-    if (is_real) {
-        double val = l1->get_real();
-        switch(op) {
+/* Helper function to perform unary operations on literals */
+std::shared_ptr<ir::Literal> PerformUnaryOp(std::shared_ptr<ir::Literal> operand, 
+                                          ir::Instruction::OpID operation, 
+                                          bool is_floating_point) 
+{
+    if (is_floating_point) {
+        const double value = operand->get_real();
+        switch(operation) {
             case ir::Instruction::OpID::Sub:
-                return ir::Literal::make_literal(-val);
+                return ir::Literal::make_literal(-value);
             case ir::Instruction::OpID::Null:
-                return ir::Literal::make_literal(val);
+                return ir::Literal::make_literal(value);
             default:
-                LOG_WARN("Unexpected Computation: %s %f", ir::Instruction::op_to_string(op).c_str(), val);
-                LOG_WARN("OpID: %d", op);
-                break; // 无法优化
+                LOG_WARN("Unexpected floating point operation: %s on %f", 
+                        ir::Instruction::op_to_string(operation).c_str(), 
+                        value);
+                break;
         }
-    } else {
-        long val = l1->get_int();
-        switch(op) {
+    } 
+    else {
+        const long value = operand->get_int();
+        switch(operation) {
             case ir::Instruction::OpID::Minus:
-                return ir::Literal::make_literal(-val);
-            case ir::Instruction::OpID::Not: case ir::Instruction::OpID::BitReverse:
-                return ir::Literal::make_literal(~val);
+                return ir::Literal::make_literal(-value);
+            case ir::Instruction::OpID::Not: 
+            case ir::Instruction::OpID::BitReverse:
+                return ir::Literal::make_literal(~value);
             case ir::Instruction::OpID::Null:
-                return ir::Literal::make_literal(val);
+                return ir::Literal::make_literal(value);
             default:
-                LOG_ERROR("Unknown Operator ID: %d", op);
-                break; // 无法优化
-        }
-    }
-    return nullptr;
-
-}
-
-std::shared_ptr<ir::Literal> compute(std::shared_ptr<ir::Literal> l1, std::shared_ptr<ir::Literal> l2, ir::Instruction::OpID op, bool is_real) {
-    if (is_real) {
-        double lval = l1->get_real();
-        double rval = l2->get_real();
-        switch(op) {
-            case ir::Instruction::OpID::Add:
-                return ir::Literal::make_literal(lval + rval);
-            case ir::Instruction::OpID::Sub:
-                return ir::Literal::make_literal(lval - rval);
-            case ir::Instruction::OpID::Mul:
-                return ir::Literal::make_literal(lval * rval);
-            case ir::Instruction::OpID::Div:
-                return ir::Literal::make_literal(lval / rval);
-            default:
-                LOG_WARN("Unexpected Computation: %f %s %f", lval, ir::Instruction::op_to_string(op).c_str(), rval);
-                break; // 无法优化
-        }
-    } else {
-        long lval = l1->get_int();
-        long rval = l2->get_int();
-        switch(op) {
-            case ir::Instruction::OpID::Add:
-                return ir::Literal::make_literal(lval + rval);
-            case ir::Instruction::OpID::Sub:
-                return ir::Literal::make_literal(lval - rval);
-            case ir::Instruction::OpID::Mul:
-                return ir::Literal::make_literal(lval * rval);
-            case ir::Instruction::OpID::Div:
-                return ir::Literal::make_literal(lval / rval);
-            case ir::Instruction::OpID::Mod:
-                return ir::Literal::make_literal(lval % rval);
-            case ir::Instruction::OpID::And: case ir::Instruction::OpID::AndThen:
-                return ir::Literal::make_literal(lval && rval);
-            case ir::Instruction::OpID::Or: case ir::Instruction::OpID::OrElse:
-                return ir::Literal::make_literal(lval || rval);
-            case ir::Instruction::OpID::Eq:
-                return ir::Literal::make_literal(lval == rval);
-            case ir::Instruction::OpID::Ne:
-                return ir::Literal::make_literal(lval != rval);
-            case ir::Instruction::OpID::Gt:
-                return ir::Literal::make_literal(lval > rval);
-            case ir::Instruction::OpID::Ge:
-                return ir::Literal::make_literal(lval >= rval);
-            case ir::Instruction::OpID::Lt:
-                return ir::Literal::make_literal(lval < rval);
-            case ir::Instruction::OpID::Le:
-                return ir::Literal::make_literal(lval <= rval);
-            default:
-                LOG_ERROR("Unknown Operator ID: %d", op);
+                LOG_ERROR("Unsupported unary operation ID: %d", operation);
                 break;
         }
     }
     return nullptr;
 }
 
+/* Helper function to perform binary operations on literals */
+std::shared_ptr<ir::Literal> PerformBinaryOp(std::shared_ptr<ir::Literal> left, 
+                                           std::shared_ptr<ir::Literal> right,
+                                           ir::Instruction::OpID operation, 
+                                           bool is_floating_point) 
+{
+    if (is_floating_point) {
+        const double left_val = left->get_real();
+        const double right_val = right->get_real();
+        
+        switch(operation) {
+            case ir::Instruction::OpID::Add:  return ir::Literal::make_literal(left_val + right_val);
+            case ir::Instruction::OpID::Sub:  return ir::Literal::make_literal(left_val - right_val);
+            case ir::Instruction::OpID::Mul:  return ir::Literal::make_literal(left_val * right_val);
+            case ir::Instruction::OpID::Div:  return ir::Literal::make_literal(left_val / right_val);
+            default:
+                LOG_WARN("Unexpected floating point operation: %f %s %f", 
+                        left_val, 
+                        ir::Instruction::op_to_string(operation).c_str(), 
+                        right_val);
+                break;
+        }
+    } 
+    else {
+        const long left_val = left->get_int();
+        const long right_val = right->get_int();
+        
+        switch(operation) {
+            case ir::Instruction::OpID::Add:  return ir::Literal::make_literal(left_val + right_val);
+            case ir::Instruction::OpID::Sub:  return ir::Literal::make_literal(left_val - right_val);
+            case ir::Instruction::OpID::Mul:  return ir::Literal::make_literal(left_val * right_val);
+            case ir::Instruction::OpID::Div:  return ir::Literal::make_literal(left_val / right_val);
+            case ir::Instruction::OpID::Mod:  return ir::Literal::make_literal(left_val % right_val);
+            case ir::Instruction::OpID::And: 
+            case ir::Instruction::OpID::AndThen: return ir::Literal::make_literal(left_val && right_val);
+            case ir::Instruction::OpID::Or: 
+            case ir::Instruction::OpID::OrElse:  return ir::Literal::make_literal(left_val || right_val);
+            case ir::Instruction::OpID::Eq:   return ir::Literal::make_literal(left_val == right_val);
+            case ir::Instruction::OpID::Ne:   return ir::Literal::make_literal(left_val != right_val);
+            case ir::Instruction::OpID::Gt:   return ir::Literal::make_literal(left_val > right_val);
+            case ir::Instruction::OpID::Ge:   return ir::Literal::make_literal(left_val >= right_val);
+            case ir::Instruction::OpID::Lt:   return ir::Literal::make_literal(left_val < right_val);
+            case ir::Instruction::OpID::Le:   return ir::Literal::make_literal(left_val <= right_val);
+            default:
+                LOG_ERROR("Unsupported binary operation ID: %d", operation);
+                break;
+        }
+    }
+    return nullptr;
+}
 
-std::shared_ptr<ir::Value> opt_arith_inst(std::shared_ptr<ir::Instruction> inst, int depth) {
-    if (!inst->is_arith_inst() || depth > MAX_DEPTH) {
-        // 不是算术表达式，直接返回
-        return inst;
+/* Recursively optimize arithmetic instructions */
+std::shared_ptr<ir::Value> OptimizeArithmeticExpr(std::shared_ptr<ir::Instruction> instruction, 
+                                                 int recursion_depth) 
+{
+    if (!instruction->is_arith_inst() || recursion_depth > kMaxRecursionDepth) {
+        return instruction;
     }
-    if (inst->is_binary_inst()) {
-        // 二元表达式计算优化
-        auto lhs = inst->get_operand(0).lock();
-        auto rhs = inst->get_operand(1).lock();
-        if(lhs->is_inst()) {
-            auto lhs_inst = std::dynamic_pointer_cast<ir::Instruction>(lhs);
-            if(lhs_inst->is_arith_inst()) {
-                auto result = opt_arith_inst(lhs_inst, depth + 1);
-                if(result) {
-                    inst->set_operand(0, result);
-                    prog->all_values_.emplace_back(result);
+
+    if (instruction->is_binary_inst()) {
+        // Optimize both operands first
+        auto left_operand = instruction->get_operand(0).lock();
+        auto right_operand = instruction->get_operand(1).lock();
+        
+        if (left_operand->is_inst()) {
+            auto left_inst = std::dynamic_pointer_cast<ir::Instruction>(left_operand);
+            if (left_inst->is_arith_inst()) {
+                auto optimized_left = OptimizeArithmeticExpr(left_inst, recursion_depth + 1);
+                if (optimized_left) {
+                    instruction->set_operand(0, optimized_left);
+                    current_module->all_values_.emplace_back(optimized_left);
                 }
             }
         }
-        if(rhs->is_inst()) {
-            auto rhs_inst = std::dynamic_pointer_cast<ir::Instruction>(rhs);
-            if(rhs_inst->is_arith_inst()) {
-                auto result = opt_arith_inst(rhs_inst, depth + 1);
-                if(result) {
-                    inst->set_operand(1, result);
-                    prog->all_values_.emplace_back(result);
+        
+        if (right_operand->is_inst()) {
+            auto right_inst = std::dynamic_pointer_cast<ir::Instruction>(right_operand);
+            if (right_inst->is_arith_inst()) {
+                auto optimized_right = OptimizeArithmeticExpr(right_inst, recursion_depth + 1);
+                if (optimized_right) {
+                    instruction->set_operand(1, optimized_right);
+                    current_module->all_values_.emplace_back(optimized_right);
                 }
             }
         }
-        lhs = inst->get_operand(0).lock();
-        rhs = inst->get_operand(1).lock();
-        if (lhs->is_literal() && rhs->is_literal()) {
-            auto lval = std::dynamic_pointer_cast<ir::Literal>(lhs);
-            auto rval = std::dynamic_pointer_cast<ir::Literal>(rhs);
-            auto result = compute(lval, rval, inst->get_op_id(), inst->is_real());
-            return result;
+        
+        // Re-get the operands after optimization
+        left_operand = instruction->get_operand(0).lock();
+        right_operand = instruction->get_operand(1).lock();
+        
+        // If both are literals, compute the result
+        if (left_operand->is_literal() && right_operand->is_literal()) {
+            auto left_literal = std::dynamic_pointer_cast<ir::Literal>(left_operand);
+            auto right_literal = std::dynamic_pointer_cast<ir::Literal>(right_operand);
+            return PerformBinaryOp(left_literal, right_literal, 
+                                 instruction->get_op_id(), 
+                                 instruction->is_real());
         }
-    } else if (inst->is_unary_inst()) {
-        auto operand = inst->get_operand(0).lock();
-        if(inst->op_id_ == ir::Instruction::OpID::Bracket) {
-            // 括号表达式，进入内部
-            opt_arith_inst(std::dynamic_pointer_cast<ir::Instruction>(operand), depth + 1);
+    } 
+    else if (instruction->is_unary_inst()) {
+        auto operand = instruction->get_operand(0).lock();
+        
+        // Handle parentheses specially
+        if (instruction->op_id_ == ir::Instruction::OpID::Bracket) {
+            OptimizeArithmeticExpr(std::dynamic_pointer_cast<ir::Instruction>(operand), 
+                                 recursion_depth + 1);
         }
-        if(operand->is_inst()) {
+        
+        if (operand->is_inst()) {
             auto operand_inst = std::dynamic_pointer_cast<ir::Instruction>(operand);
-            if(operand_inst->is_arith_inst()) {
-                auto result = opt_arith_inst(operand_inst, depth + 1);
-                if(result) {
-                    inst->set_operand(0, result);
-                    prog->all_values_.emplace_back(result);
+            if (operand_inst->is_arith_inst()) {
+                auto optimized_operand = OptimizeArithmeticExpr(operand_inst, recursion_depth + 1);
+                if (optimized_operand) {
+                    instruction->set_operand(0, optimized_operand);
+                    current_module->all_values_.emplace_back(optimized_operand);
                 }
             }
         }
-        operand = inst->get_operand(0).lock();
+        
+        operand = instruction->get_operand(0).lock();
         if (operand->is_literal()) {
-            auto val = std::dynamic_pointer_cast<ir::Literal>(operand);
-            auto result = compute(val, inst->get_op_id(), inst->is_real());
-            return result;
+            auto literal = std::dynamic_pointer_cast<ir::Literal>(operand);
+            return PerformUnaryOp(literal, instruction->get_op_id(), 
+                                instruction->is_real());
         }
     }
-    return inst;
+    
+    return instruction;
 }
 
 void ConstExprOpt::optimize(ir::Module &program) {
-    // 遍历基本块，找到所有表达式
-    prog = &program;
-    for (auto &func : program.functions_) {
-        for(auto &bb: func->basic_blocks_) {
-            for(auto &inst: bb->instructions_) {
-                // 之所以用这种遍历方式，是为了避免将被抛弃的表达式再度进行优化
-                if (inst->is_assign_inst()) {
-                    auto ptr = inst->get_operand(0).lock();
-                    if (ptr->is_inst()) {
-                        auto inst_ptr = std::dynamic_pointer_cast<ir::Instruction>(ptr);
-                        while (inst_ptr->is_array_visit_inst()) {
-                            // 如果是数组访问，则进行优化（第二个操作数一定是一个计算表达式）
-                            auto array_ptr = inst_ptr->get_operand(1).lock();
-                            if (array_ptr->is_inst()) {
-                                auto array_inst = std::dynamic_pointer_cast<ir::Instruction>(array_ptr);
-                                if (array_inst->is_arith_inst()) {
-                                    auto result = opt_arith_inst(array_inst, 0);
-                                    if(result) {
-                                        inst_ptr->set_operand(1, result);
-                                        program.all_values_.emplace_back(result);
+    current_module = &program;
+    
+    for (auto &function : program.functions_) {
+        for (auto &basic_block : function->basic_blocks_) {
+            for (auto &instruction : basic_block->instructions_) {
+                if (instruction->is_assign_inst()) {
+                    auto left_value = instruction->get_operand(0).lock();
+                    
+                    if (left_value->is_inst()) {
+                        auto left_inst = std::dynamic_pointer_cast<ir::Instruction>(left_value);
+                        while (left_inst->is_array_visit_inst()) {
+                            auto array_index = left_inst->get_operand(1).lock();
+                            if (array_index->is_inst()) {
+                                auto index_inst = std::dynamic_pointer_cast<ir::Instruction>(array_index);
+                                if (index_inst->is_arith_inst()) {
+                                    auto optimized_index = OptimizeArithmeticExpr(index_inst, 0);
+                                    if (optimized_index) {
+                                        left_inst->set_operand(1, optimized_index);
+                                        program.all_values_.emplace_back(optimized_index);
                                     }
                                 }
                             }
-                            ptr = inst_ptr->get_operand(0).lock();
-                            if (ptr->is_inst()) {
-                                inst_ptr = std::dynamic_pointer_cast<ir::Instruction>(ptr);
+                            
+                            left_value = left_inst->get_operand(0).lock();
+                            if (left_value->is_inst()) {
+                                left_inst = std::dynamic_pointer_cast<ir::Instruction>(left_value);
                             } else {
                                 break;
                             }
                         }
                     }
-                    auto rval = inst->get_operand(1).lock();
-                    if (rval->is_inst()) {
-                        auto inst_ptr = std::dynamic_pointer_cast<ir::Instruction>(rval);
-                        if (inst_ptr->is_arith_inst()) {
-                            auto result = opt_arith_inst(inst_ptr, 0);
-                            if(result) {
-                                inst->set_operand(1, result);
-                                program.all_values_.emplace_back(result);
+                    
+                    auto right_value = instruction->get_operand(1).lock();
+                    if (right_value->is_inst()) {
+                        auto right_inst = std::dynamic_pointer_cast<ir::Instruction>(right_value);
+                        if (right_inst->is_arith_inst()) {
+                            auto optimized_right = OptimizeArithmeticExpr(right_inst, 0);
+                            if (optimized_right) {
+                                instruction->set_operand(1, optimized_right);
+                                program.all_values_.emplace_back(optimized_right);
                             }
                         }
                     }
-                } else if (inst->is_br_inst()) {
-                    // 分支语句的compare条件可能可以优化
-                    auto cond = inst->get_operand(0).lock();
-                    if (cond->is_inst()) {
-                        // 如果此处不是常数，尝试优化
-                        auto inst_ptr = std::dynamic_pointer_cast<ir::Instruction>(cond);
-                        if (inst_ptr->is_arith_inst()) {
-                            auto result = opt_arith_inst(inst_ptr, 0);
-                            if(result) {
-                                inst->set_operand(0, result);
-                                program.all_values_.emplace_back(result);
+                } 
+                else if (instruction->is_br_inst()) {
+                    auto condition = instruction->get_operand(0).lock();
+                    if (condition->is_inst()) {
+                        auto cond_inst = std::dynamic_pointer_cast<ir::Instruction>(condition);
+                        if (cond_inst->is_arith_inst()) {
+                            auto optimized_cond = OptimizeArithmeticExpr(cond_inst, 0);
+                            if (optimized_cond) {
+                                instruction->set_operand(0, optimized_cond);
+                                program.all_values_.emplace_back(optimized_cond);
                             }
                         }
                     }
-                } else if (inst->is_io_inst()) {
-                    unsigned op_num = inst->get_num_ops();
-                    for (unsigned i = 0; i < op_num; i++) {
-                        auto ptr = inst->get_operand(i).lock();
-                        if (ptr->is_inst()) {
-                            auto inst_ptr = std::dynamic_pointer_cast<ir::Instruction>(ptr);
-                            if (inst_ptr->is_arith_inst()) {
-                                auto result = opt_arith_inst(inst_ptr, 0);
-                                if(result) {
-                                    inst->set_operand(i, result);
-                                    program.all_values_.emplace_back(result);
+                } 
+                else if (instruction->is_io_inst()) {
+                    const unsigned num_operands = instruction->get_num_ops();
+                    for (unsigned i = 0; i < num_operands; i++) {
+                        auto operand = instruction->get_operand(i).lock();
+                        if (operand->is_inst()) {
+                            auto operand_inst = std::dynamic_pointer_cast<ir::Instruction>(operand);
+                            
+                            if (operand_inst->is_arith_inst()) {
+                                auto optimized_operand = OptimizeArithmeticExpr(operand_inst, 0);
+                                if (optimized_operand) {
+                                    instruction->set_operand(i, optimized_operand);
+                                    program.all_values_.emplace_back(optimized_operand);
                                 }
-                            } else if (inst_ptr->is_array_visit_inst()) {
-                                while (inst_ptr->is_array_visit_inst()) {
-                                    // 如果是数组访问，则进行优化（第二个操作数一定是一个计算表达式）
-                                    auto array_ptr = inst_ptr->get_operand(1).lock();
-                                    if (array_ptr->is_inst()) {
-                                        auto array_inst = std::dynamic_pointer_cast<ir::Instruction>(array_ptr);
-                                        if (array_inst->is_arith_inst()) {
-                                            auto result = opt_arith_inst(array_inst, 0);
-                                            if(result) {
-                                                inst_ptr->set_operand(1, result);
-                                                program.all_values_.emplace_back(result);
+                            } 
+                            else if (operand_inst->is_array_visit_inst()) {
+                                while (operand_inst->is_array_visit_inst()) {
+                                    auto array_index = operand_inst->get_operand(1).lock();
+                                    if (array_index->is_inst()) {
+                                        auto index_inst = std::dynamic_pointer_cast<ir::Instruction>(array_index);
+                                        if (index_inst->is_arith_inst()) {
+                                            auto optimized_index = OptimizeArithmeticExpr(index_inst, 0);
+                                            if (optimized_index) {
+                                                operand_inst->set_operand(1, optimized_index);
+                                                program.all_values_.emplace_back(optimized_index);
                                             }
                                         }
                                     }
-                                    ptr = inst_ptr->get_operand(0).lock();
-                                    if (ptr->is_inst()) {
-                                        inst_ptr = std::dynamic_pointer_cast<ir::Instruction>(ptr);
+                                    
+                                    operand = operand_inst->get_operand(0).lock();
+                                    if (operand->is_inst()) {
+                                        operand_inst = std::dynamic_pointer_cast<ir::Instruction>(operand);
                                     } else {
                                         break;
                                     }
