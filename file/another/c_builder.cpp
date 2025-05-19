@@ -5,186 +5,131 @@
 #include "ir_opt/ir_gen.hpp"
 #include <unordered_set>
 #include <sstream>
-namespace builder
-{
-namespace c {
+
+namespace builder::c {
+
+namespace {
     std::stringstream output;
-    std::unordered_set<const ir::BasicBlock *>processed_bbs;
-// 处理基本块
-void HandleBasicBlock(std::string prefix, std::shared_ptr<ir::BasicBlock> bb, std::stringstream& out)
-{
-    // 检查是否已经处理过该基本块
-    if (processed_bbs.find(bb.get()) != processed_bbs.end())
-    {
-        return;
-    }
-    // 判断基本块是否为空
-    if (bb->instructions_.empty())
-    {
-        if (bb->name_ == "body_basic_block" || bb->name_=="then_basic_block") {
-            out << "{}";
-        }
-        return;
-    }
-    // 标记为已处理
-    processed_bbs.insert(bb.get());
+    std::unordered_set<const ir::BasicBlock*> processed_bbs;
 
-    if(bb->name_=="body_basic_block" || bb->name_=="then_basic_block" || bb->name_ == "body_begin_basic_block"){
-        out<< prefix <<"{\n";
+    bool is_special_block(const std::string& name) {
+        return name == "body_basic_block" || 
+               name == "then_basic_block" ||
+               name == "else_basic_block" ||
+               name == "body_begin_basic_block" ||
+               name == "body_end_basic_block";
     }
-    if(bb->name_=="else_basic_block"){
-        out<< prefix <<"else {\n";
-    }
-    // 2. 遍历基本块中指令列表
-    for (int k = 0; k < bb->instructions_.size(); k++)
-    {
-        std::shared_ptr<ir::Instruction> inst = bb->instructions_[k];
-        if(inst->op_id_== ir::Instruction::OpID::Br){
-            out << prefix << inst->print() << "\n";
-        }
-        else{
-            out << prefix <<inst->print() << ";\n";
+
+    void handle_basic_block(std::string_view prefix, 
+                          const std::shared_ptr<ir::BasicBlock>& bb, 
+                          std::stringstream& out) {
+        // Skip if already processed
+        if (processed_bbs.find(bb.get()) != processed_bbs.end()) return;
+        processed_bbs.insert(bb.get());
+
+        // Handle empty blocks
+        if (bb->instructions_.empty()) {
+            if (bb->name_ == "body_basic_block" || bb->name_ == "then_basic_block") {
+                out << "{}";
+            }
+            return;
         }
 
+        // Handle block opening
+        if (bb->name_ == "else_basic_block") {
+            out << prefix << "else {\n";
+        } else if (is_special_block(bb->name_)) {
+            out << prefix << "{\n";
+        }
 
-    }
+        // Process instructions
+        for (const auto& inst : bb->instructions_) {
+            out << prefix << inst->print();
+            out << (inst->op_id_ == ir::Instruction::OpID::Br ? "\n" : ";\n");
+        }
 
-    // 3. 遍历后续基本块
-    for (int k = 0; k < bb->succ_bbs_.size(); k++)
-    {
-        std::weak_ptr<ir::BasicBlock> nextBlock = bb->succ_bbs_[k];
-        std::shared_ptr<ir::BasicBlock> nextBlockShared = nextBlock.lock();
-        if (nextBlockShared)
-        {
-            HandleBasicBlock(prefix + "\t", nextBlockShared, out);
+        // Process successor blocks
+        for (const auto& next : bb->succ_bbs_) {
+            if (auto next_block = next.lock()) {
+                handle_basic_block(std::string(prefix) + "\t", next_block, out);
+            }
+        }
+
+        // Handle block closing
+        if (is_special_block(bb->name_)) {
+            out << prefix << "}\n";
         }
     }
-    if(bb->name_=="body_basic_block"||bb->name_=="then_basic_block"|| bb->name_=="else_basic_block" || bb->name_ == "body_end_basic_block"){
-        out<< prefix <<"}\n";
-    }
-}
+} // anonymous namespace
 
-void CBuilder::build(ir::Module &program)
-{
-    // 1. 初始化 stream
+void CBuilder::build(ir::Module& program) {
     std::stringstream out;
-//    std::ofstream out("G_SETTINGS.output_file");
-    // 2. 加上 C 语言的头文件
-    out << "#include <stdio.h>\n";
-    out << "#include <stdlib.h>\n";
-    out << "#include <sys/types.h>\n";
-    out << "#include <sys/wait.h>\n";
-    out << "#include <unistd.h>\n";
+    
+    // Add standard headers
+    out << "#include <stdio.h>\n"
+        << "#include <stdlib.h>\n"
+        << "#include <sys/types.h>\n"
+        << "#include <sys/wait.h>\n"
+        << "#include <unistd.h>\n";
 
-    // 3. 加上全局变量和常量
-    for (const auto &global : program.global_identifiers_)
-    {
-        if (global->is_const_)
-        {
-            out << "const " + global->type_->print() << " " << global->name_ << " = " << global->init_val_->print()
-                << ";\n";
+    // Process global variables
+    for (const auto& global : program.global_identifiers_) {
+        out << (global->is_const_ ? "const " : "")
+            << global->type_->print() << " " << global->name_;
+        
+        if (global->is_const_) {
+            out << " = " << global->init_val_->print();
         }
-        else
-        {
-            std::string s = global->type_->print();
-            int ps = s.find(" ");
-            if (ps == std::string::npos)
-            {
-                out << global->type_->print() << " " << global->name_ << ";\n";
-            }
-            else
-            {
-                out << s.substr(0, ps) << " " << global->name_ << s.substr(ps + 1) << ";\n";
-            }
-        }
+        out << ";\n";
     }
-    // 4. 遍历函数
-    for (int i = 0; i < program.functions_.size(); i++)
-    {
-        std::weak_ptr<ir::Function> func = program.functions_[i];
-        // 4.1 加入函数头
-        out << func.lock()->print() << "\n";
-        // 4.2 加入函数左大括号
-        out << "{\n";
-        // if (func.lock()->print() == "int main()") {
-        //     // 如果是 main 函数，创建子线程
-        //     out << "pid_t pid;\n";
-        //     out << "pid = fork();\n";
-        //     out << "if (pid < 0) {\n";
-        //     out << "    fprintf(stderr, \"fork failed\");\n";
-        //     out << "    exit(1);\n";
-        //     out << "} else if (pid == 0) {\n";
-        //     out << "    char filename[] =\"" << G_SETTINGS.input_file + ".empty" << "\";\n";
-        //     out << "    FILE* file = fopen((char*)filename, \"w\");\n";
-        //     out << "    if (file == NULL) {\n";
-        //     out << "        fprintf(stderr, \"file open failed\");\n";
-        //     out << "        exit(1);\n";
-        //     out << "    }\n";
-        //     out << "    exit(0);\n";
-        //     out << "}\n";
-        // }
-        // 4.3 加入局部标识符
-        // // 一上来先先加上代表函数的一个变量, 这个变量名字是双下划线
-        // if (func.lock()->func_type_.lock()->result_->tid_ != ir::Type::VoidTID) { // 如果不是 procedure
-        //     std::string typeStr = func.lock()->func_type_.lock()->result_->print();
-        //     out << typeStr << " __;\n";
-        // }
 
-        for (const auto &local : func.lock()->local_identifiers_)
-        {
-            // 遍历函数参数列表，排除函数参数
-            bool isFuncParam = false;
-            for (const auto &local_args : func.lock()->args_)
-            {
-                if (local->name_ == local_args->name_)
-                {
-                    isFuncParam = true;
+    // Process functions
+    for (const auto& func : program.functions_) {
+        out << func->print() << "\n{\n";
+
+        // Process local variables
+        for (const auto& local : func->local_identifiers_) {
+            bool is_param = false;
+            for (const auto& arg : func->args_) {
+                if (arg->name_ == local->name_) {
+                    is_param = true;
                     break;
                 }
             }
-            if (local->is_const_ && !isFuncParam )
-            {
-                out << "const " + local->type_->print() << " " << local->name_ << " = " << local->init_val_->print() << ";\n";
-            }
-            else
-            {
-                if (!isFuncParam)
-                {
-                    std::string s = local->type_->print();
-                    int ps = s.find(" ");
-                    if (ps == std::string::npos)
-                    {
-                        out << local->type_->print() << " " << local->name_ << ";\n";
-                    }
-                    else
-                    {
-                        out << s.substr(0, ps) << " " << local->name_ << s.substr(ps + 1) << ";\n";
-                    }
+            
+            if (!is_param) {
+                out << (local->is_const_ ? "const " : "")
+                    << local->type_->print() << " " << local->name_;
+                
+                if (local->is_const_) {
+                    out << " = " << local->init_val_->print();
                 }
+                out << ";\n";
             }
         }
-        // 4.4 遍历基本块
-        for (int j = 0; j < func.lock()->basic_blocks_.size(); j++)
-        {
-            std::shared_ptr<ir::BasicBlock> bb = func.lock()->basic_blocks_[j];
-            HandleBasicBlock("", bb, out);
+
+        // Process basic blocks
+        for (const auto& bb : func->basic_blocks_) {
+            handle_basic_block("", bb, out);
         }
-        // 4.5 加入函数右大括号（main函数，需要特判）
-        if (func.lock()->print() == "int main()")
-        {
+
+        // Function return
+        if (func->print() == "int main()") {
             out << "return 0;\n";
-        } else if (func.lock()->func_type_.lock()->result_->tid_ != ir::Type::VoidTID) {
-            out << "return __;\n"; 
+        } else if (auto func_type = func->func_type_.lock()) {  // 正确处理weak_ptr
+            if (func_type->result_->tid_ != ir::Type::VoidTID) {
+                out << "return __;\n";
+            }
         }
         out << "}\n";
     }
+
     code_ = out.str();
     LOG_DEBUG("CBuilder: code generated");
 }
-void CBuilder::output(std::ofstream &out)
-{
+
+void CBuilder::output(std::ofstream& out) {
     out << code_;
 }
 
-} // namespace c
-} // namespace builder
+} // namespace builder::c
