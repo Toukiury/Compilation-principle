@@ -7,12 +7,12 @@
 #include <utility>
 #include <vector>
 
-#include "common/log/log.hpp"
-#include "common/setting/settings.hpp"
-#include "ast/stmt.hpp"
-#include "ast/stmt_test.hpp"
-#include "yacc_pascal.hpp"
-#include "lex_pascal.hpp"
+#include "another/log.hpp"
+#include "another/settings.hpp"
+#include "ast/ast_stmt.hpp"
+#include "ast/stmt_print.hpp"
+#include "yacc.hpp"
+#include "lex.hpp"
 
 bool hadError = false; // 错误标志
 
