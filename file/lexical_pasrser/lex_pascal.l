@@ -4,10 +4,10 @@
 #define YY_TYPEDEF_YY_SIZE_T
 typedef int yy_size_t;
 
-/* yylex()初始化宏 */
+
 #define YY_USER_INIT yycolumn = 0;
 
-/* token位置跟踪宏 */
+
 #define YY_USER_ACTION                          \
 do {                                            \
     yylloc->first_line = yylloc->last_line = yylineno; \
@@ -21,10 +21,10 @@ do {                                            \
 %{
 #include <cstring>
 #include <cstdio>
-/* 包含所需头文件 */
+
 
 #include "ast/stmt.hpp"
-#include "common/log/log.hpp"
+#include "another/log.hpp"
 #include "yacc_pascal.hpp"
 
 #define TABSIZE 4
@@ -49,7 +49,7 @@ char *strdup_tolower(const char *s) {
 
 %}
 
-/* Flex配置 */
+
 %option noyywrap
 %option nounput
 %option noinput
@@ -59,12 +59,12 @@ char *strdup_tolower(const char *s) {
 %option case-insensitive
 %option bison-locations
 
-/* 注释状态 */
+
 %x COMMENT_BRACE
 %x COMMENT_LINE
 %x COMMENT_BLOCK
 
-/* 词法规则 */
+
 DIGIT       [0-9]
 INTEGER     {DIGIT}+
 REAL        {DIGIT}+"."{DIGIT}+
@@ -79,70 +79,70 @@ OTHER_SIGN  [\~\;\:\.\,\+\-\*\/\(\)\[\]\=\>\<\&\|\!]
 
 %%
 
-/* 关键字 */
-"program"       RETURN_TOKEN(PROGRAM);
-"const"         RETURN_TOKEN(CONST);
-"type"          RETURN_TOKEN(TYPE);
-"record"        RETURN_TOKEN(RECORD);
-"array"         RETURN_TOKEN(ARRAY);
-"of"            RETURN_TOKEN(OF);
-"var"           RETURN_TOKEN(VAR);
-"function"      RETURN_TOKEN(FUNCTION);
-"procedure"     RETURN_TOKEN(PROCEDURE);
-"begin"         RETURN_TOKEN(BEGIN_TOKEN);
-"end"           RETURN_TOKEN(END);
-"if"            RETURN_TOKEN(IF);
-"then"          RETURN_TOKEN(THEN);
-"else"          RETURN_TOKEN(ELSE);
-"case"          RETURN_TOKEN(CASE);
-"while"         RETURN_TOKEN(WHILE);
-"repeat"        RETURN_TOKEN(REPEAT);
-"until"         RETURN_TOKEN(UNTIL);
-"for"           RETURN_TOKEN(FOR);
-"to"            RETURN_TOKEN(TO);
-"downto"        RETURN_TOKEN(DOWNTO);
-"do"            RETURN_TOKEN(DO);
-"read"          RETURN_TOKEN(READ);
-"readln"        RETURN_TOKEN(READLN);
-"break"         RETURN_TOKEN(BREAK);
-"continue"      RETURN_TOKEN(CONTINUE);
-"write"         RETURN_TOKEN(WRITE);
-"writeln"       RETURN_TOKEN(WRITELN);
-"char"          RETURN_TOKEN(CHAR_KW);
-"integer"       RETURN_TOKEN(INTEGER_KW);
-"real"          RETURN_TOKEN(REAL_KW);
-"boolean"       RETURN_TOKEN(BOOLEAN_KW);
 
-/* 布尔值 */
+"program"       { RETURN_TOKEN(PROGRAM); }
+"const"         { RETURN_TOKEN(CONST); }
+"type"          { RETURN_TOKEN(TYPE); }
+"record"        { RETURN_TOKEN(RECORD); }
+"array"         { RETURN_TOKEN(ARRAY); }
+"of"            { RETURN_TOKEN(OF); }
+"var"           { RETURN_TOKEN(VAR); }
+"function"      { RETURN_TOKEN(FUNCTION); }
+"procedure"     { RETURN_TOKEN(PROCEDURE); }
+"begin"         { RETURN_TOKEN(BEGIN_TOKEN); }
+"end"           { RETURN_TOKEN(END); }
+"if"            { RETURN_TOKEN(IF); }
+"then"          { RETURN_TOKEN(THEN); }
+"else"          { RETURN_TOKEN(ELSE); }
+"case"          { RETURN_TOKEN(CASE); }
+"while"         { RETURN_TOKEN(WHILE); }
+"repeat"        { RETURN_TOKEN(REPEAT); }
+"until"         { RETURN_TOKEN(UNTIL); }
+"for"           { RETURN_TOKEN(FOR); }
+"to"            { RETURN_TOKEN(TO); }
+"downto"        { RETURN_TOKEN(DOWNTO); }
+"do"            { RETURN_TOKEN(DO); }
+"read"          { RETURN_TOKEN(READ); }
+"readln"        { RETURN_TOKEN(READLN); }
+"break"         { RETURN_TOKEN(BREAK); }
+"continue"      { RETURN_TOKEN(CONTINUE); }
+"write"         { RETURN_TOKEN(WRITE); }
+"writeln"       { RETURN_TOKEN(WRITELN); }
+"char"          { RETURN_TOKEN(CHAR_KW); }
+"integer"       { RETURN_TOKEN(INTEGER_KW); }
+"real"          { RETURN_TOKEN(REAL_KW); }
+"boolean"       { RETURN_TOKEN(BOOLEAN_KW); }
+
+
 "true"          { yylval->boolean = true;  return BOOLEAN; }
 "false"         { yylval->boolean = false; return BOOLEAN; }
 
-/* 运算符 */
-"not"           RETURN_TOKEN(NOT);
-"div"           RETURN_TOKEN(DIV);
-"mod"           RETURN_TOKEN(MOD);
-"and"           RETURN_TOKEN(AND);
-"or"            RETURN_TOKEN(OR);
-"<>"            RETURN_TOKEN(NE);
-"<="            RETURN_TOKEN(LE);
-">="            RETURN_TOKEN(GE);
-":="            RETURN_TOKEN(ASSIGNOP);
-"in"            RETURN_TOKEN(IN);
-"or else"       RETURN_TOKEN(ORELSE);
-"and then"      RETURN_TOKEN(ANDTHEN);
 
-/* 符号 */
-{BRACE_PAIR}    RETURN_TOKEN(BRACE_PAIR);
-".."            RETURN_TOKEN(DOUBLE_DOT);
-{OTHER_SIGN}    RETURN_TOKEN(yytext[0]);
+"not"           { RETURN_TOKEN(NOT); }
+"div"           { RETURN_TOKEN(DIV); }
+"mod"           { RETURN_TOKEN(MOD); }
+"and"           { RETURN_TOKEN(AND); }
+"or"            { RETURN_TOKEN(OR); }
+"<>"            { RETURN_TOKEN(NE); }
+"<="            { RETURN_TOKEN(LE); }
+">="            { RETURN_TOKEN(GE); }
+":="            { RETURN_TOKEN(ASSIGNOP); }
+"in"            { RETURN_TOKEN(IN); }
+"or else"       { RETURN_TOKEN(ORELSE); }
+"and then"      { RETURN_TOKEN(ANDTHEN); }
 
-/* 常量 */
+
+{BRACE_PAIR}    { RETURN_TOKEN(BRACE_PAIR); }
+".."            { RETURN_TOKEN(DOUBLE_DOT); }
+{OTHER_SIGN}    { RETURN_TOKEN(yytext[0]); }
+
+
 {INTEGER}       { yylval->number = atoi(yytext); RETURN_TOKEN(INTEGER); }
 {REAL}          { yylval->real = strdup(yytext); RETURN_TOKEN(REAL); }
 {CHAR}          { yylval->charactor = yytext[1]; RETURN_TOKEN(CHAR); }
 {IDENTIFIER}    { yylval->string = strdup_tolower(yytext); RETURN_TOKEN(IDENTIFIER); }
 
-/* 注释处理 */
+
 "{"             { BEGIN(COMMENT_BRACE); }
 "//"            { BEGIN(COMMENT_LINE); }
 "/*"            { BEGIN(COMMENT_BLOCK); }
@@ -172,12 +172,12 @@ OTHER_SIGN  [\~\;\:\.\,\+\-\*\/\(\)\[\]\=\>\<\&\|\!]
     }
 }
 
-/* 空白与字符串 */
+
 [ \t\r\n]       { /* 忽略 */ }
 \"[^"]*\"       { yylval->string = strdup(yytext); RETURN_TOKEN(STRING); }
 '[^']*\'        { yylval->string = strdup(yytext); RETURN_TOKEN(STRING); }
 
-/* 其他 */
+
 .               { /* 忽略 */ }
 
 %%
