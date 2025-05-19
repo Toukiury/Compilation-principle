@@ -1,0 +1,3 @@
+D:/2025first/work/BUPT-PASCC/BUPT-PASCC-master/build/CMakeFiles/pascc.dir
+D:/2025first/work/BUPT-PASCC/BUPT-PASCC-master/build/CMakeFiles/edit_cache.dir
+D:/2025first/work/BUPT-PASCC/BUPT-PASCC-master/build/CMakeFiles/rebuild_cache.dir
