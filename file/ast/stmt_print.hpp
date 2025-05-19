@@ -1,9 +1,9 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "ast/stmt.hpp"
+#include "ast/ast_stmt.hpp"
 /*
-    * @brief 用于打印stmt的内容
+    * @brief 用于打印ast_stmt的内容
 */
 std::string deep_print(int deep);
 
