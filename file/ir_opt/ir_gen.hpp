@@ -1,8 +1,8 @@
 #pragma once
 
-#include "ir_opt/ir.hpp"
+#include "ir_opt/ir_core.hpp"
 #include "ast/ast_visitor.hpp"
-#include "ast/stmt.hpp"
+#include "ast/ast_stmt.hpp"
 
 #include <fstream>
 #include <memory>
