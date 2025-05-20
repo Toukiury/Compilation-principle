@@ -79,8 +79,8 @@
 
 #include "another/log.hpp"
 #include "another/settings.hpp"
-#include "ast/stmt.hpp"
-#include "ast/stmt_test.hpp"
+#include "ast/ast_stmt.hpp"
+#include "ast/stmt_print.hpp"
 #include "yacc.hpp"
 #include "lex.hpp"
 
