@@ -62,7 +62,7 @@ namespace {
     }
 } // anonymous namespace
 
-void CBuilder::build(ir::Module& program) {
+void CBuilder::build(ir::Module& program) noexcept {
     std::stringstream out;
     
     // Add standard headers
@@ -128,7 +128,7 @@ void CBuilder::build(ir::Module& program) {
     LOG_DEBUG("CBuilder: code generated");
 }
 
-void CBuilder::output(std::ofstream& out) {
+void CBuilder::output(std::ofstream& out) noexcept {
     out << code_;
 }
 
