@@ -11,13 +11,13 @@
 #include "another/thpool.hpp"
 #include "another/log.hpp"
 #include "ir_opt/opt.hpp"
-#include "ast/stmt.hpp"
+#include "ast/ast_stmt.hpp"
 #include "ast/stmt_print.hpp" // 包含 printSyntaxTree 声明
 #include "ir_opt/ir_gen.hpp"
 #include "another/settings.hpp"
 #include "another/c_builder.hpp"
 #include "ir_opt/const_expr.hpp"
-#include "lexical_pasrser/yacc_pascal.hpp"
+#include "lexical_pasrser/yacc.hpp"
 #include "another/c_builder.hpp"
 
 int code_parse(const char *code, ProgramStmt **program_stmt);
