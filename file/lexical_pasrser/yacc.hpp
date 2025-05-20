@@ -114,7 +114,7 @@ extern int yydebug;
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 union YYSTYPE
 {
-#line 308 "yacc_pascal.y"
+#line 308 "yacc.y"
 
     ProgramStmt *                                   program_struct;
     ProgramHeadStmt *                               program_head;
@@ -163,7 +163,7 @@ union YYSTYPE
     char                                           charactor;
     int                                            token;
 
-#line 167 "yacc_pascal.hpp"
+#line 167 "yacc.hpp"
 
 };
 typedef union YYSTYPE YYSTYPE;
