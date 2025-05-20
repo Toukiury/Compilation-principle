@@ -1,4 +1,4 @@
-#include "ir_opt/ir.hpp"
+#include "ir_opt/ir_core.hpp"
 #include "ir_opt/ir_visitor.hpp"
 #include <deque>
 #include <iterator>
