@@ -82,3 +82,5 @@ std::string program_stmt_str(const ProgramStmt* program, int deep);
 std::string base_stmt_str(const BaseStmt* stmt, int deep);
 
 std::string while_stmt_str(const WhileStmt* while_stmt, int deep);
+
+void printSyntaxTree(const ProgramStmt* program);
