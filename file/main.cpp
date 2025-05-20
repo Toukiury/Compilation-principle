@@ -10,6 +10,7 @@
 #include <algorithm>
 #include <cctype>
 #include <unordered_map>
+#include <iomanip>  // 添加 setw 所需的头文件
 
 #include "another/thpool.hpp"
 #include "another/log.hpp"
@@ -183,9 +184,9 @@ bool generateTokenFile(const std::string& source_code, const std::string& output
         ++line_num;
     }
     
-    // 写入表格头
-    token_file << "| 行号 | 列号 | Token类型 | 值 |\n";
-    token_file << "|------|------|-----------|----|\n";
+    // 使用简单的固定宽度格式，不使用Markdown表格
+    token_file << "                   行号    列号    Token类型    Token值\n";
+    token_file << "======================================\n";
     
     // 写入token信息
     for (const auto& token_str : tokens) {
@@ -197,7 +198,8 @@ bool generateTokenFile(const std::string& source_code, const std::string& output
         std::getline(ss, line, '|');
         std::getline(ss, col, '|');
         
-        token_file << "| " << line << " | " << col << " | " << type << " | " << value << " |\n";
+        token_file << std::left << std::setw(8) << line << std::setw(8) << col 
+                  << std::setw(12) << type << std::setw(10) << value << "\n";
     }
     
     // 更新文件开头添加token总数
