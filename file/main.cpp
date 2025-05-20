@@ -16,9 +16,8 @@
 #include "ir_opt/ir_gen.hpp"
 #include "another/settings.hpp"
 #include "another/c_builder.hpp"
-#include "ir_opt/const_expr.hpp"
+#include "ir_opt/const.hpp"
 #include "lexical_pasrser/yacc.hpp"
-#include "another/c_builder.hpp"
 
 int code_parse(const char *code, ProgramStmt **program_stmt);
 
