@@ -672,9 +672,9 @@ static const flex_int32_t yy_rule_can_match_eol[65] =
  * 第三个部分还是C代码，flex 会复制此段代码
  */
 
-#include "ast/stmt.hpp"
+#include "ast/ast_stmt.hpp"
 #include "another/log.hpp"
-#include "yacc_pascal.hpp"
+#include "yacc.hpp"
 
 #define TABSIZE 4
 #ifndef register
