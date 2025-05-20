@@ -16,7 +16,7 @@ Settings &Settings::get_instance()
 void Settings::parse_args(int argc, char *argv[])
 {
     int opt;
-    while((opt = getopt(argc,argv,"d:i:o:h:j:O:")) != -1)
+    while((opt = getopt(argc,argv,"d:i:o:h:j:O")) != -1)
     {
         switch(opt)
         {
@@ -34,7 +34,7 @@ void Settings::parse_args(int argc, char *argv[])
                 exit(0);
                 break;
             case 'j':
-                thread_num = atoi(optarg);
+                // 线程池功能已移除
                 break;
             case 'O':
                 opt_level = 1;
@@ -56,6 +56,7 @@ void Settings::say_help()
     LOG_INFO("  -o <file>   Set output file");
     LOG_INFO("  -h          Show this help message");
     LOG_INFO("  -O          Enable optimization");
+    
 }
 
 } // namespace common
