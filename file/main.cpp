@@ -12,6 +12,7 @@
 #include "another/log.hpp"
 #include "ir_opt/opt.hpp"
 #include "ast/stmt.hpp"
+#include "ast/stmt_print.hpp" // 包含 printSyntaxTree 声明
 #include "ir_opt/ir_gen.hpp"
 #include "another/settings.hpp"
 #include "another/c_builder.hpp"
@@ -118,6 +119,10 @@ int main(int argc, char *argv[])
         LOG_FATAL("Program exit");
         return -1;
     }
+    // 打印语法树到 tree.txt
+    LOG_DEBUG("Attempting to print syntax tree...");
+    printSyntaxTree(program_stmt);
+    LOG_DEBUG("Syntax tree printing attempted.");
     // 第二步: 语义分析 & 生成中间代码
     LOG_DEBUG("Start generating intermediate code...");
     std::unique_ptr<ir::IRGenerator> visitor = std::make_unique<ir::IRGenerator>();
