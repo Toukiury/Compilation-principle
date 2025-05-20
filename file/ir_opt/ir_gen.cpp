@@ -1,9 +1,9 @@
 #include "ir_opt/ir_gen.hpp"
 #include "assert.h"
-#include "ast/stmt.hpp"
+#include "ast/ast_stmt.hpp"
 #include "another/exception.hpp"
 #include "another/log.hpp"
-#include "ir_opt/ir.hpp"
+#include "ir_opt/ir_core.hpp"
 #include <algorithm>
 #include <iostream>
 #include <memory>
