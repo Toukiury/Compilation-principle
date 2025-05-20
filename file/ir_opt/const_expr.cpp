@@ -1,7 +1,7 @@
 #include "ir_opt/const_expr.hpp"
 
 #include "another/log.hpp"
-#include "ir_opt/ir.hpp"
+#include "ir_opt/ir_core.hpp"
 #include <memory>
 
 
