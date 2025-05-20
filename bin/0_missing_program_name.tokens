@@ -1,0 +1,32 @@
+# PASCC词法分析器 - Token流
+
+源文件: 0_missing_program_name.pas
+Token总数: 25
+
+  行号    列号    Token类型    Token值
+======================================
+1       1       KEYWORD     program   
+1       9       SYMBOL      ;         
+2       1       KEYWORD     const     
+3       3       IDENTIFIER  max_val   
+3       11      SYMBOL      =         
+3       13      INTEGER     100       
+3       16      SYMBOL      ;         
+4       1       KEYWORD     var       
+5       3       IDENTIFIER  counter   
+5       11      SYMBOL      :         
+5       13      KEYWORD     integer   
+5       20      SYMBOL      ;         
+6       1       KEYWORD     begin     
+7       3       IDENTIFIER  counter   
+7       11      ASSIGN      :=        
+7       14      INTEGER     5         
+7       15      SYMBOL      ;         
+8       3       IDENTIFIER  counter   
+8       11      ASSIGN      :=        
+8       14      IDENTIFIER  counter   
+8       22      SYMBOL      *         
+8       24      INTEGER     2         
+8       25      SYMBOL      ;         
+9       1       KEYWORD     end       
+9       4       SYMBOL      .         

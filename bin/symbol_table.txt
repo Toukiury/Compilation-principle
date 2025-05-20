@@ -1,0 +1,12 @@
+Symbol table content (scope hierarchy from inside to out):
+=== Scope level 2 ===
+Symbol name:a | Type:int [5][5] | Value:a | Scopt:Global
+Symbol name:cat | Type:char | Value:cat | Scopt:Global
+Symbol name:dog | Type:char | Value:dog | Scopt:Global
+Symbol name:i | Type:int | Value:i | Scopt:Global
+Symbol name:j | Type:int | Value:j | Scopt:Global
+Symbol name:k | Type:int | Value:k | Scopt:Global
+Symbol name:main | Type:int | Value:int main() | Scopt:Global
+Symbol name:model | Type:int | Value:int model() | Scopt:Global
+Symbol name:n | Type:int | Value:n | Scopt:Global
+Symbol name:relu_reg | Type:int | Value:int relu_reg(int n) | Scopt:Global
