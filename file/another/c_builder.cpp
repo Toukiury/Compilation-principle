@@ -74,8 +74,18 @@ void CBuilder::build(ir::Module& program) noexcept {
 
     // Process global variables
     for (const auto& global : program.global_identifiers_) {
-        out << (global->is_const_ ? "const " : "")
-            << global->type_->print() << " " << global->name_;
+        out << (global->is_const_ ? "const " : "");
+        
+        // Handle array type correctly
+        if (global->type_->tid_ == ir::Type::ArrayTID) {
+            auto arrayType = std::dynamic_pointer_cast<ir::ArrayType>(global->type_);
+            out << arrayType->elem_type_->print() << " " << global->name_;
+            for (unsigned i = 0; i < arrayType->dims_elem_num_.size(); i++) {
+                out << "[" << arrayType->dims_elem_num_[i] << "]";
+            }
+        } else {
+            out << global->type_->print() << " " << global->name_;
+        }
         
         if (global->is_const_) {
             out << " = " << global->init_val_->print();
@@ -98,8 +108,18 @@ void CBuilder::build(ir::Module& program) noexcept {
             }
             
             if (!is_param) {
-                out << (local->is_const_ ? "const " : "")
-                    << local->type_->print() << " " << local->name_;
+                out << (local->is_const_ ? "const " : "");
+                
+                // Handle array type correctly
+                if (local->type_->tid_ == ir::Type::ArrayTID) {
+                    auto arrayType = std::dynamic_pointer_cast<ir::ArrayType>(local->type_);
+                    out << arrayType->elem_type_->print() << " " << local->name_;
+                    for (unsigned i = 0; i < arrayType->dims_elem_num_.size(); i++) {
+                        out << "[" << arrayType->dims_elem_num_[i] << "]";
+                    }
+                } else {
+                    out << local->type_->print() << " " << local->name_;
+                }
                 
                 if (local->is_const_) {
                     out << " = " << local->init_val_->print();
