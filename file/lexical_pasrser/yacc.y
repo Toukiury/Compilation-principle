@@ -65,55 +65,6 @@ MulExprStmt::MulExprType get_mul_expr_type(long long op) {
 
 }
 
-// std::unique_ptr<RelExprStmt> new_rel_expr_stmt(RelExprStmt::RelExprType type) {
-//     std::unique_ptr<RelExprStmt> rel_expr = std::make_unique<RelExprStmt>();
-//     rel_expr->type = type;
-//     if(type == RelExprStmt::RelExprType::NULL_TYPE){
-//         rel_expr->add_expr = nullptr;
-//     }
-//     return rel_expr;
-// }
-
-
-// std::unique_ptr<AddExprStmt> new_add_expr_stmt(AddExprStmt::AddExprType type) {
-//     std::unique_ptr<AddExprStmt> add_expr = std::make_unique<AddExprStmt>();
-//     add_expr->type = type;
-//     if(type == AddExprStmt::AddExprType::NULL_TYPE){
-//         add_expr->add_expr = nullptr;
-//     }
-//     return add_expr;
-// }
-
-
-// std::unique_ptr<MulExprStmt> new_mul_expr_stmt(MulExprStmt::MulExprType type) {
-//     std::unique_ptr<MulExprStmt> mul_expr = std::make_unique<MulExprStmt>();
-//     mul_expr->type = type;
-//     if(type == MulExprStmt::MulExprType::NULL_TYPE){
-//         mul_expr->mul_expr = nullptr;
-//     }
-//     return mul_expr;
-// }
-
-
-// std::unique_ptr<UnaryExprStmt> new_unary_expr_stmt(UnaryExprStmt::UnaryExprType type) {
-//     std::unique_ptr<UnaryExprStmt> unary_expr = std::make_unique<UnaryExprStmt>();
-//     unary_expr->type = type;
-//     return unary_expr;
-// }
-
-
-// std::unique_ptr<PrimaryExprStmt> new_primary_expr_stmt(PrimaryExprStmt::PrimaryExprType type) {
-//     std::unique_ptr<PrimaryExprStmt> primary_expr = std::make_unique<PrimaryExprStmt>();
-//     primary_expr->type = type;
-//     return primary_expr;
-// }
-
-// std::unique_ptr<ValueStmt> new_value_stmt(ValueStmt::ValueType type) {
-//     std::unique_ptr<ValueStmt> value = std::make_unique<ValueStmt>();
-//     value->type = type;
-//     return value;
-// }
-
 NumberStmt * new_number_stmt(char char_val);
 NumberStmt * new_number_stmt(double real_val);
 NumberStmt * new_number_stmt(long long int_val);
@@ -167,21 +118,6 @@ void fill_number_stmt(NumberStmt* num_value, char char_val){
     num_value->is_unsigned = false;
     num_value->char_val = char_val;
 }
-
-// std::unique_ptr<PrimaryExprStmt> bridge_primary_to_unary(std::unique_ptr<UnaryExprStmt> unary_expr){
-//     std::unique_ptr<PrimaryExprStmt> primary_expr = std::make_unique<PrimaryExprStmt>();
-//     primary_expr->type = PrimaryExprStmt::PrimaryExprType::Parentheses;
-//     primary_expr->expr = std::make_unique<ExprStmt>();
-//     primary_expr->expr->rel_expr = std::make_unique<RelExprStmt>();
-//     primary_expr->expr->rel_expr->type = RelExprStmt::RelExprType::NULL_TYPE;
-//     primary_expr->expr->rel_expr->add_expr = std::make_unique<AddExprStmt>();
-//     primary_expr->expr->rel_expr->add_expr->type = AddExprStmt::AddExprType::NULL_TYPE;
-//     primary_expr->expr->rel_expr->add_expr->mul_expr = std::make_unique<MulExprStmt>();
-//     primary_expr->expr->rel_expr->add_expr->mul_expr->type = MulExprStmt::MulExprType::NULL_TYPE;
-//     primary_expr->expr->rel_expr->add_expr->mul_expr->unary_expr = std::move(unary_expr);
-//     return primary_expr;
-// }
-
 
 void syntax_error(YYLTYPE *llocp, const char *msg){
     LOG_ERROR("[Syntax Error] at line %d, column %d: %s", llocp->first_line, llocp->first_column, msg);
@@ -455,7 +391,6 @@ programstruct : program_head  ';'  program_body '.'
         delete $3;
         $$ = nullptr;
         LOG_DEBUG("ERROR programstruct -> error ';' program_body '.'");
-        // yyerror(&yylloc, "code_str", program, scanner, "程序头定义出错，请检查。");
     }
     | program_head  ';'  error
     {
@@ -464,7 +399,6 @@ programstruct : program_head  ';'  program_body '.'
         delete $1;
         $$ = nullptr;
         LOG_DEBUG("ERROR programstruct -> program_head ';' error");
-        // yyerror(&yylloc, "code_str", program, scanner, "程序体定义出错，请检查。");
     }
     | error  ';'  error
     {
@@ -472,7 +406,6 @@ programstruct : program_head  ';'  program_body '.'
         *program = program_struct;
         $$ = nullptr;
         LOG_DEBUG("ERROR programstruct -> error ';' error");
-        // yyerror(&yylloc, "code_str", program, scanner, "程序头、程序体定义出错，请检查。");
     }
     /* | error
     {
@@ -511,7 +444,6 @@ program_head : PROGRAM IDENTIFIER '(' idlist ')'
     {
         $$ = nullptr;
         LOG_DEBUG("ERROR program_head -> PROGRAM error");
-        // yyerror(&yylloc, "code_str", program, scanner, "程序名定义出错，请检查。");
         yyerrok;
     }
     ;
@@ -1012,14 +944,12 @@ subprogram_head: PROCEDURE IDENTIFIER formal_parameter
         {
             $$ = nullptr;
             LOG_DEBUG("ERROR subprogram_head -> FUNCTION error");
-            // yyerror(&yylloc, "code_str", program, scanner, "子程序头中标识符定义出错，请检查。");
             yyerrok;
         }
         | PROCEDURE error
         {
             $$ = nullptr;
             LOG_DEBUG("ERROR subprogram_head -> PROCEDURE error");
-            // yyerror(&yylloc, "code_str", program, scanner, "子程序头中标识符定义出错，请检查。");
             yyerrok;
         };
 
@@ -1206,7 +1136,6 @@ statement_list : statement
         delete $3;
         $$ = nullptr;
         LOG_DEBUG("ERROR statement_list -> error ';' statement");
-        // yyerror(&yylloc, "code_str", program, scanner, "语句定义出错，请检查。");
         yyerrok;
     }
     | statement_list ';' error
@@ -1219,7 +1148,6 @@ statement_list : statement
         delete $1;
         $$ = nullptr;
         LOG_DEBUG("ERROR statement_list -> statement_list ';' error");
-        // yyerror(&yylloc, "code_str", program, scanner, "语句定义出错，请检查。");
         yyerrok;
     }
     ;
@@ -1255,8 +1183,6 @@ statement : /*empty*/
         AssignStmt * assign_stmt = new AssignStmt();
         assign_stmt->lval = std::make_unique<LValStmt>();
         assign_stmt->lval->id = std::string($1);
-        // how to deal with array_index
-        // assign_stmt->lval->array_index = std::vector<std::unique_ptr<ExprStmt>>();
         assign_stmt->expr = std::unique_ptr<ExprStmt>($3);
         stmt_list->emplace_back(assign_stmt);
         $$ = stmt_list;
@@ -1722,32 +1648,6 @@ factor : INTEGER
         $$ = unary_expr;
         LOG_DEBUG("DEBUG factor -> INTEGER");
     }
-    /* | '+' INTEGER
-    {
-        UnaryExprStmt * unary_expr = new UnaryExprStmt();
-        //unary_expr->types.emplace_back(UnaryExprStmt::UnaryExprType::NULL_TYPE);
-        unary_expr->primary_expr = std::make_unique<PrimaryExprStmt>();
-        unary_expr->primary_expr->type =PrimaryExprStmt::PrimaryExprType::Value;
-        unary_expr->primary_expr->value = std::make_unique<ValueStmt>();
-        unary_expr->primary_expr->value->type =ValueStmt::ValueType::Number;
-        unary_expr->primary_expr->value->number = std::make_unique<NumberStmt>();
-        fill_number_stmt(unary_expr->primary_expr->value->number,$2);
-        $$ = unary_expr;
-        LOG_DEBUG("DEBUG factor -> '+' INTEGER");
-    }
-    | '-' INTEGER
-    {
-        UnaryExprStmt * unary_expr = new UnaryExprStmt();
-        unary_expr->types.emplace_back(UnaryExprStmt::UnaryExprType::Minus;
-        unary_expr->primary_expr = std::make_unique<PrimaryExprStmt>();
-        unary_expr->primary_expr->type =PrimaryExprStmt::PrimaryExprType::Value;
-        unary_expr->primary_expr->value = std::make_unique<ValueStmt>();
-        unary_expr->primary_expr->value->type =ValueStmt::ValueType::Number;
-        unary_expr->primary_expr->value->number = std::make_unique<NumberStmt>();
-        fill_number_stmt(unary_expr->primary_expr->value->number,($2)*-1);
-        $$ = unary_expr;
-        LOG_DEBUG("DEBUG factor -> '-' INTEGER");
-    } */
     | REAL
     {
         current_rule = CurrentRule::Factor;
@@ -1765,32 +1665,6 @@ factor : INTEGER
         $$ = unary_expr;
         LOG_DEBUG("DEBUG factor -> REAL");
     }
-    /* | '+' REAL
-    {
-        UnaryExprStmt * unary_expr = new UnaryExprStmt();
-        //unary_expr->types.emplace_back(UnaryExprStmt::UnaryExprType::NULL_TYPE);
-        unary_expr->primary_expr = std::make_unique<PrimaryExprStmt>();
-        unary_expr->primary_expr->type =PrimaryExprStmt::PrimaryExprType::Value;
-        unary_expr->primary_expr->value = std::make_unique<ValueStmt>();
-        unary_expr->primary_expr->value->type =ValueStmt::ValueType::Number;
-        unary_expr->primary_expr->value->number = std::make_unique<NumberStmt>();
-        fill_number_stmt(unary_expr->primary_expr->value->number,$2);
-        $$ = unary_expr;
-        LOG_DEBUG("DEBUG factor -> '+' REAL");
-    }
-    | '-' REAL
-    {
-        UnaryExprStmt * unary_expr = new UnaryExprStmt();
-        unary_expr->types.emplace_back(UnaryExprStmt::UnaryExprType::Minus;
-        unary_expr->primary_expr = std::make_unique<PrimaryExprStmt>();
-        unary_expr->primary_expr->type =PrimaryExprStmt::PrimaryExprType::Value;
-        unary_expr->primary_expr->value = std::make_unique<ValueStmt>();
-        unary_expr->primary_expr->value->type =ValueStmt::ValueType::Number;
-        unary_expr->primary_expr->value->number = std::make_unique<NumberStmt>();
-        fill_number_stmt(unary_expr->primary_expr->value->number,($2)*-1);
-        $$ = unary_expr;
-        LOG_DEBUG("DEBUG factor -> '-' REAL");
-    } */
     | BOOLEAN
     {
         current_rule = CurrentRule::Factor;
@@ -1887,19 +1761,13 @@ factor : INTEGER
         $$ = unary_expr;
         LOG_DEBUG("DEBUG factor -> '-' factor");
     };
-/*
-* addop ->  + | - | or
-*/
+
 addop : '+' { $$ = 0; } | '-' { $$ = 1; } | OR { $$ = 2; }
 
-/*
-* relop -> = | <> | < | <= | > | >= 
-*/
+
 relop : '=' { $$ = 0; } | NE { $$ = 1; } | '<' { $$ = 2; } | LE { $$ = 3; } | '>' { $$ = 4; } | GE { $$ = 5; } | IN { $$ = 6; }
 
-/*
-* mulop -> * | / | div | mod | and
-*/
+
 mulop : '*' { $$ = 0; } | '/' { $$ = 1; } | DIV { $$ = 1; } | MOD { $$ = 2; } | AND { $$ = 3; } | ANDTHEN { $$ = 4; } 
 
 error_recovery
@@ -2000,69 +1868,7 @@ static int yyreport_syntax_error(const yypcontext_t *ctx, const char * code_str,
         buf << " but found \"" << error_note << "\"";
     std::cerr<< buf.str() << std::endl;
     std::cerr<< msg << std::endl;
-    /* switch (current_rule)
-        {
-            case CurrentRule::ProgramStruct:
-                LOG_ERROR("程序定义出错 请检查是否符合规范");
-                break;
-            case CurrentRule::ProgramHead:
-                LOG_ERROR("程序头定义出错 请检查是否符合规范");
-                break;
-            case CurrentRule::ProgramBody:
-                LOG_ERROR("程序体定义出错 请检查是否符合规范");
-                break;
-            case CurrentRule::IdList:
-                LOG_ERROR("标识符定义错误 请检查是否符合规范");
-                break;
-            case CurrentRule::ConstDeclarations: case CurrentRule::ConstDeclaration:
-                LOG_ERROR("常量定义出错 请检查是否符合规范");
-                break;
-            case CurrentRule::ConstValue:
-                LOG_ERROR("常量 请检查是否为合法常量");
-                break;
-            case CurrentRule::VarDeclarations: case CurrentRule::VarDeclaration:
-                LOG_ERROR("变量定义出错 请检查是否符合规范");
-                break;
-            case CurrentRule::Type:
-                LOG_ERROR("类型定义出错 请检查是否符合规范");
-                break;
-            case CurrentRule::SubprogramDeclarations: case CurrentRule::Subprogram:
-                LOG_ERROR("子函数定义出错 请检查是否符合规范");
-                break;
-            case CurrentRule::SubprogramHead:
-                LOG_ERROR("子函数头定义出错 请检查是否符合规范");
-                break;
-            case CurrentRule::FormalParameter:
-                LOG_ERROR("参数定义出错 请检查是否符合规范");
-                break;
-            case CurrentRule::SubprogramBody:
-                LOG_ERROR("子函数体定义出错 请检查是否符合规范");
-                break;
-            case CurrentRule::CompoundStatement:
-                LOG_ERROR("复合语句定义出错 请检查是否符合规范");
-                break;
-            case CurrentRule::StatementList: case CurrentRule::Statement:
-                LOG_ERROR("语句定义出错 请检查是否符合规范");
-                break;
-            case CurrentRule::ProcedureCall:
-                LOG_ERROR("过程调用出错 请检查是否符合规范");
-                break;
-            case CurrentRule::VariableList: case CurrentRule::Variable:
-                LOG_ERROR("变量定义出错 请检查是否符合规范");
-                break;
-            case CurrentRule::IdVarpart: case CurrentRule::ArrayIndexExpression:
-            case CurrentRule::BracketExpressionList:
-                LOG_ERROR("数组下标定义出错 请检查是否符合规范");
-                break;
-            case CurrentRule::ExpressionList: case CurrentRule::Expression:
-            case CurrentRule::SimpleExpression: case CurrentRule::Term: case CurrentRule::Factor:
-                LOG_ERROR("表达式定义出错 请检查是否符合规范");
-                break;
-            default:
-                LOG_ERROR("请检查相关代码是否符合规范");
-                break;
-
-        } */
+    
     return res;
 }
 
