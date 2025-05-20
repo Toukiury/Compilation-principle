@@ -274,7 +274,6 @@ void init_env()
             break;
     }
 #endif
-    // 线程池功能已移除
     
 }
 
