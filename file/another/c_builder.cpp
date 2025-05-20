@@ -1,6 +1,6 @@
 #include "another/c_builder.hpp"
 #include "another/log.hpp"
-#include "ir_opt/ir.hpp"
+#include "ir_opt/ir_core.hpp"
 #include "another/settings.hpp"
 #include "ir_opt/ir_gen.hpp"
 #include <unordered_set>
