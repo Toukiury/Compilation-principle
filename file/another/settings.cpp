@@ -33,9 +33,6 @@ void Settings::parse_args(int argc, char *argv[])
                 say_help();
                 exit(0);
                 break;
-            case 'j':
-                // 线程池功能已移除
-                break;
             case 'O':
                 opt_level = 1;
                 break;
