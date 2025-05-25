@@ -25,7 +25,7 @@ do {                                            \
 
 #include "ast/stmt.hpp"
 #include "another/log.hpp"
-#include "yacc_pascal.hpp"
+#include "yacc.hpp"
 
 #define TABSIZE 4
 #ifndef register
